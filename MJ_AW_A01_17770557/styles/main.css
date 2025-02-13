@@ -1,0 +1,77 @@
+/*universal reset*/
+* {
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+/*body selector*/
+body{
+    display: flex;
+    max-width: 900px;
+    width: 80%;
+    flex-direction: column;
+    justify-self: center;
+    align-self:  center;
+    align-items: center;
+    border: 3px solid black;
+    box-shadow: 2px 2px 4px gray;
+    padding-bottom: 1em;
+
+}
+/*all styles for header*/
+header{
+    display: block;
+    max-width: 900px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to bottom, silver 0%, lightgray 20%, white 100%);
+    border-bottom: 2px solid black;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+}
+
+header h1{
+    display: block;
+    font-size: 200%;
+    justify-self: center;
+    margin-top: 0.25em;
+    margin-bottom: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: center;
+}
+/*all styles for nav menu*/
+
+/*all styles for main*/
+main a{
+    display: inline-block;
+    color: white;
+    font-size: 130%;
+    text-decoration: none;
+    background-color: #AAAAAA;
+    box-shadow: 1px 1px 2px gray ;
+    width: 9em;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+main a:hover, main a:focus{
+    font-size: 140%;
+    font-weight: bolder;
+}
+
+p{
+    margin: 0.5em;
+}
+#bye{
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: 120%;
+}
+
+@media only screen and (max-width: 636px){
+    main a{
+        margin-left: 7em;
+        margin-right: 7em;
+    }
+}
