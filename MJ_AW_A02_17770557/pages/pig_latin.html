@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Latin</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/header-footer.css">
+</head>
+    <body>
+        <header>
+            <h1>Advanced Web - A02 Assignment</h1>
+            <h2>- Pig Latin Translator -</h2>
+            
+            <a href="../index.html">Home</a>
+            <a href="../pages/tax_calculator.html" >Sales Tax</a>
+            <a href="../pages/pig_latin.html" class="current_page">Pig Latin</a>
+        </header>
+        <main>
+            <fieldset id="pig_input">
+                <legend>Input Text</legend>
+                <p class="tip">All entries will have punctuation and numbers removed!</p>
+                <textarea name="input_text" id="input"></textarea>
+                <button id="translate">Translate</button>
+                <button id="clear">Clear</button>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Pig Latin</legend>
+                <textarea name="output_text" id="output" readonly></textarea>
+            </fieldset>
+        </main>
+        <script src="../js/pig_latin.js"></script>
+    </body>
+</html>

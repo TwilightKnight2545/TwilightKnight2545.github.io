@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body{
+    width: 80%;
+    max-width: 750px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, #e3d3ee 0%, #eeeeee 20%, #eeeeee 80%, #e3d3ee 100%);
+    
+}
+main{
+    width: 70%;
+    border-top: 2px solid rgb(82, 45, 4);
+    margin: 0 auto;
+}
+/* Form Controls */
+fieldset{
+    background-color: #f8f8f8;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+fieldset legend{
+    background-color: rgb(254, 255, 240);
+    padding: 0.5em 1em;
+    font-weight: bold;
+}
+fieldset, fieldset legend{
+    border: 2px solid rgb(82, 45, 4);
+}
+
+/* Income Tax Buttons*/
+fieldset button{
+    display: block;
+    padding: 0 0.25em;
+    margin: 0.25em 0.5em;
+    margin-left: 22%; /*Set the same as label width + input left margin - 1%*/
+    width: 45%;
+}
+/* Pig Latin buttons */
+fieldset#pig_input button{
+    display: inline-block;
+    width: 40%;
+    margin: 0.25em 1em;
+}
+
+
+fieldset input{
+    margin: 0.25em 1%;
+    width: 45%;
+}
+fieldset label{
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+}
+
+fieldset label.required{
+    display: inline;
+    color: red;
+}
+fieldset p#error, fieldset p.tip{
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 90%;
+    margin-left: 1em;
+}
+fieldset textarea{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em;
+    resize: none;
+    height: 5em;
+    width: 90%;
+}
+/* Homepage Link */
+main a{
+    display: block;
+    width: 40%;
+
+    border: 2px solid rgb(82, 45, 4);
+    background-color: rgb(255, 240, 253);
+    /*Text*/
+    color: rgb(174, 97, 204);
+    font-size: 140%;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    /*Margins and Padding*/
+    padding: 0.5em;
+    margin: 1em auto;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 700px){
+    fieldset#pig_input button{
+        width: 35%;
+        margin-left: 8%;
+    }
+}
+@media only screen and (max-width: 650px){
+    body{
+        width: 100%;
+    }
+    main{
+        width: 80%;
+        margin: 0 auto;
+    }
+    main a{
+        width: 70%;
+    }
+
+    fieldset input{
+        margin: 0.25em 1%;
+        width: 40%;
+    }
+    fieldset button{
+        width: 40%;
+        margin-left: 37%;
+    }
+    fieldset label{
+        display: inline-block;
+        width: 35%;
+        text-align: right;
+    }
+
+    fieldset#pig_input button{
+        display: inline-block;
+        margin: .25em;
+        width: 45%;
+    }
+}

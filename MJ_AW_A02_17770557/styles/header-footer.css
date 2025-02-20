@@ -1,0 +1,35 @@
+header{
+    width: 100%;
+    text-align: center;
+
+}
+
+header h1{
+    font-size: 200%;
+}
+header h2{
+    font-size: 160%;
+    color: rgb(77, 33, 99);
+}
+header a{
+    display: inline-block;
+    width: 15%;
+
+    border: 2px solid rgb(82, 45, 4);
+    background-color: rgb(254, 255, 240);
+    /*Text*/
+    color: rgb(216, 117, 3);
+    font-weight: bold;
+    text-decoration: none;
+    /*Margins and Padding*/
+    padding: 0.5em;
+    margin: 0.5em 0.25em;
+}
+
+@media only screen and (max-width: 650px){
+    header a{
+        width: 20%;
+        padding: 0.25em;
+        margin: 0.5em 0.3em;
+    }
+}
