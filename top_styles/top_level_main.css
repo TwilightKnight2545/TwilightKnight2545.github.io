@@ -1,0 +1,58 @@
+/* Top Index */
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* Text */
+h1{
+    display: block;
+    width: 100%;
+    font-size: 220%;
+    text-align: center;
+}
+header p{
+    display: block;
+    width: 100%;
+    font-size: 150%;
+    text-align: center;
+}
+/* Images */
+img#profile_pic{
+    display: block;
+    width: 30%;
+    max-width: 1000px;
+    margin: 1em auto;
+}
+/* Links */
+main section a{
+    display: block;
+    width: 30%;
+    /* Margin and Padding */
+    margin: 1em auto;
+    padding: 0.25em;
+    /* Text */
+    color: black;
+    font-size: 130%;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: none;
+    /* Shape */
+    border: 2px solid black;
+    border-radius: 20%;
+    box-shadow: 2px 2px 4px gray;
+}
+/* Home Button */
+header a.top_level_home{
+    display: block;
+    color: black;
+    background-color: transparent;
+    border: 0;
+    text-shadow: 1px 1px 2px gray;
+    text-decoration: none;
+
+    justify-self: center;
+    padding: 1em, 0;
+}
