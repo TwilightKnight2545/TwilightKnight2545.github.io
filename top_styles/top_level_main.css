@@ -18,6 +18,9 @@ header p{
     font-size: 150%;
     text-align: center;
 }
+header p i{
+    font-size: 80%;
+}
 /* Images */
 img#profile_pic{
     display: block;
