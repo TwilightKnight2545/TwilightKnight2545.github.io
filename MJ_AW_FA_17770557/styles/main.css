@@ -1,0 +1,167 @@
+/* 
+Main.css will handle site-wide formatting including fonts, background colors, standard widths, and setting up the grid(maybe)
+*/
+
+/* Universal Resets */
+*{
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
+}
+/* Sticky */
+nav.sticky{
+    position: sticky;
+    top: 0;
+}
+@media only screen and (min-width: 901px){
+    /* Only sticks to the top of the screen when the mobile menu is not active */
+    aside div.sticky{
+        position: sticky;
+        top: 7em;
+    }
+}
+/* Fonts */
+h1, h2, h3, h4{
+    font-family: 'Century Gothic', sans-serif;
+}
+h1{
+    /* Only used for page titles */
+    font-size: 220%;
+    font-weight: bold;
+}
+
+h2{
+    /* Used for page section titles */
+    font-size: 170%;
+    font-weight: bold;
+    /* margin-left: 1em; */
+
+}
+
+h3{
+    /* Used for subheadings within the articles */
+    font-size: 160%;
+    font-weight: normal;
+    /* margin-left: 1em; */
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h4{
+    /* I don't even know what I would use this for, but it sure is here if I need it */
+    font-size: 120%;
+    font-weight: normal;
+    /* margin-left: 3em; */
+}
+
+p, span, a, figcaption{
+    font-family: 'Verdana', sans-serif;
+}
+figcaption{
+    font-size: 80%;
+    text-align: center;
+    margin-top: 0;
+}
+a.in-text-link{
+    font-weight: bold;
+    color: #048b79;
+    transition: color 0.1s;
+}
+a.in-text-link:hover, a.in-text-link:focus{
+    text-decoration: underline dotted;
+    color: #0fb986;
+}
+p.credits{
+    font-size: 80%;
+    color: #dba65b;
+    font-style: oblique;
+    margin-bottom: 2em;
+}
+html{
+    height: 100%;
+}
+/* Body */
+body{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px #444546;
+    min-height: 100vh;
+}
+/* Main */
+main{
+    display: grid;
+    flex: 1;
+    grid-template:  1fr / 5fr 2fr; /*1 row, 2 columns*/
+}
+/* Section */
+section{
+    grid-row: 1;
+    grid-column: 1;
+    border-right: 3px solid #EDF2F4;
+    box-shadow: 2px 1px 4px gray;
+
+    padding: 2em 2em 0.5em 5em;
+    
+}
+section div.article p{
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 1em;
+
+    line-height: 1.5em;
+}
+section div.article h1{
+    margin-top: 1em;
+}
+/* Aside */
+aside{
+    grid-row: 1;
+    grid-column: 2;
+    
+    background-color: #EDF2F4;
+    padding: 2em 1em 1em 1em;
+}
+
+aside h3{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+    font-size: 180%;
+    text-align: center;
+}
+
+aside ul{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+aside ul li{
+    list-style: circle;
+    margin-bottom: 2em;
+}
+aside ul li p{
+    font-size: 90%;
+}
+
+/*Hide media menu initially*/
+#mobile_menu{
+    display: none;
+    
+}
+
+/* Media Queries */
+@media only screen and (max-width: 900px){
+    #mobile_menu{
+        display: block;
+    }
+    #nav_menu{
+        display: none;
+    }
+}

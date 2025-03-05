@@ -1,0 +1,82 @@
+header h1, header a, main a{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header, main{
+    box-shadow: 4px 4px 6px rgb(44, 31, 23);
+}
+
+header{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1em;
+
+    background-image: url(../images/wooden-planks.jpg);
+    background-color: #4e3018; /*Only shows this color if the background iamge failed to load*/
+    border: 3px solid #24170d;
+}
+
+header h1, h2{
+    font-size: 250%;
+    color: bisque;
+    text-shadow: 2px 2px 2px black;
+    margin: 0.25em 1em;
+}
+header h2{
+    font-size: 170%;
+    margin-left: 4em;
+}
+header div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    
+}
+header a{
+    display: inline-block;
+    width: 25%;
+    padding: 0.25em;
+    margin: 0.25em .5em;
+
+    color: #24170d;
+    background-color: burlywood;
+    border: 2px solid #24170d;
+    border-radius: 0.5em;
+
+    font-size: 120%;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+}
+a:hover, a:focus{
+    font-weight: 900;
+    background-color: rgb(201, 164, 116);
+}
+
+@media only screen and (max-width: 825px){
+    header h1, h2{
+        font-size: 200%;
+        color: bisque;
+        text-shadow: 2px 2px 2px black;
+        margin: 0.25em 1em;
+    }
+    header h2{
+        font-size: 130%;
+        margin-left: 4em;
+    }
+    header a{
+        width: 25%;
+        font-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    header{
+        width: 80%;
+    }
+    header a{
+        width: 30%;
+        margin: 0.25em;
+        font-size: 90%;
+    }
+}

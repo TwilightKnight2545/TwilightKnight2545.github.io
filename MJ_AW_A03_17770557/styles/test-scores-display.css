@@ -1,0 +1,41 @@
+
+/* Parents */
+div#results, div#scores{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+/* Headers */
+div#results h3, div#scores h3{
+    font-size: 120%;
+    font-weight: bold;
+    padding-left: 1em;
+    margin-bottom: 0.25em;
+
+    border-bottom: 1px dashed #ad977c;
+}
+/* Children */
+div#results p, div#scores div.score{
+    font-size: 110%;
+    margin-left: 2em;
+}
+div#scores div.score p{
+    display: inline-block;
+    width: 5em;
+}
+div#scores div.score p.score-value{
+    text-align: right;
+    width: 5em;
+}
+@media only screen and (max-width: 465px){
+    div#results, div#scores{
+        margin: 0;
+    }
+    div#scores div.score p{
+        width: 5em;
+    }
+    div#scores div.score p.score-value{
+        width: 8em;
+    }
+}

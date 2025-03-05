@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Scores</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/header-footer.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Scores</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/header-footer.css">
+        <link rel="stylesheet" href="../styles/test-scores-display.css">
+    </head>
+    <body>
+        <header>
+            <h1>Use a Test Score Array</h1>
+            <div>
+                <a href="../index.html">Home</a>
+                <a href="../pages/temperature.html">Temperatures</a>
+                <a href="../pages/test-scores.html">Test Scores</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <fieldset>
+                    <div class="fields test-scores">
+                        <label for="name-field">Name: </label>
+                        <input type="text" id="name-field">
+                    </div>
+                    <div class="fields test-scores">
+                        <label for="score-field">Score: </label>
+                        <input type="text" id="score-field">
+                        <label for="score-field" class="error-message"></label>
+                    </div>
+                </fieldset>
+                
+                <button id="add-to-array">Add to Array</button>
+                <button id="remove-last-entry">Remove Last Entry</button>
+                <button id="display-results">Display Results</button>
+                <button id="display-scores">Display Scores</button>
+
+                <fieldset class="invisible">
+                    <div id="results">
+
+                    </div>
+                    <div id="scores">
     
-</body>
+                    </div>
+                </fieldset>
+            </section>
+        </main>
+        <script src="../js/test-scores.js"></script>
+    </body>
 </html>

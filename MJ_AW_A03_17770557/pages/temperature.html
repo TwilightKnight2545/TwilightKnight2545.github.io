@@ -7,7 +7,43 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header-footer.css">
 </head>
-<body>
-    
-</body>
+    <body>
+        <header>
+            <h1>Convert Temperatures</h1>
+            <div>
+                <a href="../index.html">Home</a>
+                <a href="../pages/temperature.html">Temperatures</a>
+                <a href="../pages/test-scores.html">Test Scores</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <fieldset class="unit-selectors">
+                    <div class="radio-buttons">
+                        <input type="radio" name="conversion-type" id="f-c" checked>
+                        <label for="f-c">Fahrenheit to Celsius</label>
+                    </div>
+                    <div class="radio-buttons">
+                        <input type="radio" name="conversion-type" id="c-f">
+                        <label for="c-f">Celsius to Fahrenheit</label>
+                    </div>
+                    <input type="hidden" id="out-unit" value="c">
+                </fieldset>
+                <fieldset>
+                    <div class="fields">
+                        <label for="temp-input" id="input-label">Enter Fahrenheit: </label>
+                        <input type="text" id="temp-input">
+                        <label for="temp-input" class="error-message"></label>
+                    </div>
+                    <div class="fields">
+                        <label for="temp-output" id="output-label"> Degrees Celsius: </label>
+                        <input type="text" id="temp-output" readonly>
+                    </div>
+                </fieldset>
+                <button id="convert">Convert</button>
+            </section>
+            
+        </main>
+        <script src="../js/temperatures.js"></script>
+    </body>
 </html>

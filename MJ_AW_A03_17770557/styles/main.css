@@ -1,0 +1,152 @@
+*{
+    /* Resets */
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: monospace
+}
+/* Backdrops */
+body{
+    background-image: url(../images/sand.jpg);
+    background-color: bisque; /*Only shows this color if the background iamge failed to load*/
+}
+main{
+    width: 60%;
+    margin: 0 auto;
+    background-image: url(../images/papyrus.jpg);
+    background-color: bisque; /*Only shows this color if the background iamge failed to load*/
+    border: 2px solid #ad977c;
+}
+/* Homepage Links */
+main section a{
+    display: block;
+    width: 40%;
+    padding: 0.25em;
+    margin: 1em auto;
+
+    color: #24170d;
+    background-color: burlywood;
+    border: 2px solid #24170d;
+    border-radius: 0.5em;
+
+    font-size: 120%;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+}
+/* Main */
+section{
+    padding: 2em;
+}
+
+fieldset{
+    display: block;
+    width: 25em;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 0.25em;
+
+    background-color: #ad977c4b;
+    border: 2px dashed #ad977c;
+}
+fieldset.invisible{
+    display: none;
+}
+/* Radio Buttons */
+div.radio-buttons{
+    margin: 1em;
+}
+
+div.radio-buttons label{
+    display: inline-block;
+    width: 13em;
+
+    font-size: 120%;
+    font-weight: bold;
+}
+/* Fields */
+div.fields{
+    margin: 0.5em 1em;
+}
+div.fields label{
+    display: inline-block;
+    width: 11em;
+
+    font-size: 120%;
+    font-weight: bold;
+}
+div.fields label.error-message{
+    display: inline-block;
+    width: 15em;
+    color: rgb(148, 31, 31);
+    font-size: 110%;
+    font-weight: bold;
+    font-style: oblique;
+}
+div.test-scores label{
+    width: 5em;
+}
+
+div.fields input{
+    text-align: right;
+    width: 5em;
+    padding: 0.25em;
+    background-color: bisque;
+}
+div.test-scores input{
+    width: 10em;
+}
+
+section button{
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em;
+
+    width: 12em;
+
+    color: #24170d;
+    font-size: 140%;
+    font-weight: normal;
+
+    background-color: #ad977c4b;
+    border: 2px dashed #ad977c;
+}
+section button:hover, section button:focus{
+    font-weight: bold;
+    background-color: #ad977c8f;
+}
+
+@media only screen and (max-width: 825px){
+    main section a{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    main{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 465px){
+    fieldset{
+        width: 19em;
+    }
+    div.radio-buttons{
+        margin: 1em 0 1em 0.5em;
+    }
+    div.radio-buttons label, div.fields label{
+        font-size: 130%;
+    }
+    div.fields label, div.fields label.error-message, div.fields input{
+        display: block;
+        width: 10em;
+        justify-self: center;
+    }
+    div.fields label.error-message{
+        width: 15em;
+        text-align: center;
+    }
+    section button{
+        padding: 0.25em;
+    }
+}

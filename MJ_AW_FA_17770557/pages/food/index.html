@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/header-footer.css">
+    <link rel="stylesheet" href="../../styles/slicknav.css">
+    <link rel="stylesheet" href="../../styles/recipes.css">
+    <link rel="shortcut icon" href="../../images/Moving-Out-Icon.ico" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="../../js/jquery.slicknav.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#nav_menu').slicknav({prependTo:"#mobile_menu"});
+        });
+    </script>
+</head>
+    <body>
+        <header>
+            <h1>Food</h1>
+        </header>
+        <nav id="mobile_menu" class="sticky"></nav>
+        <nav id="nav_menu" class="sticky">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../pages/housing/index.html">Housing</a></li>
+                <li><a href="../../pages/job-searching/index.html">Job Searching</a></li>
+                <li><a href="../../pages/transportation/index.html">Transportation</a></li>
+                <li class="current-page"><a href="../../pages/food/index.html">Meal Planning</a></li>
+                <li><a href="../../pages/budgeting/index.html">Budgeting</a></li>
+            </ul>    
+        </nav>
+        <main>
+            <aside>
+                <div class="sticky">
+
+                </div>
+            </aside>
+            <section>
+                <div class="article">
+                    <h2>Under Construction</h2>
+                    <p>
+                        This page is a work in progress. Please check back in 4-6 buisness weeks, and also have some patience, I'm trying okay? *breaks down sobbing...*
+                    </p>
+                </div>
+                <div id="recipe-list">
+                    <div id="controls">
+                        <div id="buttons">
+                            <h2>Recipes</h2>
+                            <select name="filter-options" id="filter-options">
+                                <option value="selection" id="filter-default" selected>Filter...</option>
+                            </select>
+                            <select name="sort-options" id="sort-options">
+                                <option value="default" id="sort-default" selected>Sort...</option>
+                                <option value="Alphabeticaly">Alphabeticaly</option>
+                                <option value="Calories">Calories</option>
+                                <option value="Prep Time">Prep Time</option>
+                            </select>
+                            <div id="div-sort-button"></div>
+                            <button id="reset">Clear Filters</button>
+                        </div>
+                        <div id="filters">
+
+                        </div>
+                    </div>
+                    
+                    <div id="recipe-display">
+                        
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+        <script src="../../js/recipes.js"></script>
+        <footer>
+            <p class="copyright">&copy; &nbsp;MJ 2025</p>
+            <div class="socials">
+                <p>Socials:</p>
+                <a href="https://buymeacoffee.com/twilight25" target="_blank" >☕︎ <i>Buy Me a Coffee</i></a>
+                <a href="https://www.youtube.com/@TheTwilightKnight_YT" target="_blank" >▶ <i>Youtube</i></a>
+            </div>
+        </footer>
+    </body>
+</html>
