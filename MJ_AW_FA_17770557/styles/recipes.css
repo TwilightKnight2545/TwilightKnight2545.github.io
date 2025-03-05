@@ -133,7 +133,8 @@ div.recipe img{
     grid-column: 1;
     display: block;
     width: 100%;
-    border: 2px solid #EDF2F4;
+    /* border: 2px solid #EDF2F4; */
+    box-shadow: 1px 1px 3px #444546;
 }
 div.recipe div.recipe-details{
     grid-column: 2;
