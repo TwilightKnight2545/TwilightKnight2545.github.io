@@ -15,6 +15,7 @@ Main.css will handle site-wide formatting including fonts, background colors, st
 /* Sticky */
 nav.sticky{
     position: sticky;
+    z-index: 1;
     top: 0;
 }
 @media only screen and (min-width: 901px){
@@ -38,6 +39,7 @@ h2{
     /* Used for page section titles */
     font-size: 170%;
     font-weight: bold;
+    margin-bottom: 1em;
     /* margin-left: 1em; */
 
 }
@@ -157,6 +159,14 @@ aside ul li p{
 }
 
 /* Media Queries */
+@media only screen and (max-width: 1230px){
+    main{
+        grid-template:  1fr / 5fr 1fr;
+    }
+    aside ul li{
+        font-size: 90%;
+    }
+}
 @media only screen and (max-width: 900px){
     #mobile_menu{
         display: block;

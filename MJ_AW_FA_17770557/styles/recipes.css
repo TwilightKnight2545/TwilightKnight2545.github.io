@@ -2,7 +2,7 @@
 select#filter-options, select#sort-options, button#reset{
     display: block;
     appearance: none;
-    width: 10rem;
+    width: 100%;
 
     border: 1px solid #EDF2F4;
     border-radius: 5px;
@@ -44,14 +44,15 @@ div#recipe-list{
 }
 div#controls{
     display: grid;
+    height: 60vh;
     grid-column: 1;
-    grid-template: 1fr 7fr/ 1fr ;
+    grid-template: 1fr 7fr / 1fr ;
 }
 div#recipe-display{
     grid-column: 2;
 }
 div#buttons{
-    display: block;
+    /* display: block; */
     grid-row: 1;
     width: 6rem;
 }
@@ -63,7 +64,7 @@ button.filter-button, button#sort-button{
     padding: 0.5em;
     margin-right: 0.5rem;
     margin-bottom: 0.25rem;
-    width: 10rem;
+    width: 75%;
     /* Color */
     background-color: #FFC776;
     border-radius: 5px;
@@ -110,6 +111,10 @@ div.recipe{
     h4{
         transition: all, 0.25s;
         font-size: 140%;
+        display: block;
+        width: 90%;
+        border-bottom: 2px solid #EDF2F4;
+        margin-bottom: 0.25em;
     }
     ul li{
         transition: all, 0.25s;
@@ -120,13 +125,14 @@ div.recipe:hover, div.recipe:focus{
     transform: scale(1.05);
     grid-template: 1fr / 1fr 3fr;
     p{
-        font-size: 100%;
+        font-size: 90%;
     };
     h4{
         font-size: 200%;
     }
     ul li{
-        font-size: 80%;
+        font-size: 100%;
+        margin-bottom: 0.1em;
     }
 }
 div.recipe img{
@@ -147,6 +153,7 @@ div.recipe div.recipe-details ul li{
     display: inline-block;
     padding: 0.25em 0.5em;
     margin-right: 0.5em;
+    margin-bottom: 0.5em;
     /* Color */
     background-color: #FFC776;
     border-radius: 5px;
@@ -160,4 +167,11 @@ div.recipe div.recipe-details ul li.recipe-info{
 }
 div.recipe div.recipe-details p{
     margin-top: 1em;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1230px){
+    div.recipe p{
+        font-size: 80%;
+    }
 }

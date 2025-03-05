@@ -16,7 +16,6 @@ header h1{
 }
 
 /* Navigation */
-
 nav#nav_menu ul{
     display: flex;
     justify-content: space-around;
