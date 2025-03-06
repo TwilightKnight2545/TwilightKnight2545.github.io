@@ -5,8 +5,8 @@ let selectorOptions = []; // 2d array, [element, isVisible]
 let filterList = []; //Will be set to the initial values of selectorOptions[]
 let recipieList = []; //[name, description, imagePath, link, prepTime, calories, [tagValues]]
 //Parallel Arrays
-let activeFilterDisplays = [];
-let activeFilterValues = [];
+
+let activeFilters = [];
 
 //Helper Functions
 const addOption = (text, value) =>{
@@ -35,7 +35,53 @@ const createTag = (innerText, isTagInfo) =>{ //if isTagInfo is true
 const addRecipe = (name, description, imagePath, link, prepTime, servings,calories, tags) =>{
     recipieList.push([name, description, imagePath, link, prepTime, servings, calories, tags]);
 }
-
+const sortRecipes = (tempRecipeList, sortKey, existingSortButton, order = existingSortButton.getAttribute("order")) =>{
+    tempRecipeList.sort(function(a,b){
+        let x = a[sortKey];
+        let y = b[sortKey];
+        if(sortKey == 5){//Triggers for servings
+            if(x.includes("-")){
+                if(order == "asc"){ //Use first number
+                    x = x.substring(0, x.indexOf("-"));
+                }
+                else{ //Use second number
+                    x = x.substring(x.indexOf("-") + 1, x.length);
+                }
+            }
+            if(y.includes("-")){
+                if(order == "asc"){ //Use first number
+                    y = y.substring(0, y.indexOf("-"));
+                }
+                else{ //Use second number
+                    y = y.substring(y.indexOf("-") + 1, y.length);
+                }
+            }
+        }
+        if(sortKey != 0){ //Triggers for anything but alphabetical sorting
+            x = parseInt(x);
+            y = parseInt(y);
+        }
+        if(x < y){
+            if(order == "asc"){
+                return -1;
+            }
+            else{ //Descending
+                return 1;
+            }
+        }
+        else if(x == y){
+            return 0;
+        }
+        else{
+            if(order == "asc"){
+                return 1;
+            }
+            else{ //Descending
+                return -1;
+            }
+        }
+    })
+}
 //--Functions
 //Filters
 const setupInitialOptions = () =>{
@@ -48,12 +94,12 @@ const setupInitialOptions = () =>{
     addOption("Dietary Restrictions", "seperator");
     addOption("Dairy-Free", "dairy-free");
     addOption("Gluten-Free", "gluten-free");
-    addOption("Kosher", "kosher");
+    // addOption("Kosher", "kosher");
     addOption("Low Carb", "low-carb");
     addOption("Vegetarian", "vegetarian");
     addOption("Misc.", "seperator");
     addOption("< 15min Prep", "under-fifteen-prep");
-    addOption("Requires Oven", "requires-oven");
+    // addOption("Requires Oven", "requires-oven");
     
     filterList = selectorOptions;
 }
@@ -129,8 +175,7 @@ const addFilter = () =>{
             });
             divFilters.appendChild(button);
             //Adds the filter to the active filter list, removes from the select options lit
-            activeFilterValues.push(option);
-            activeFilterDisplays.push(buttonDisplay);
+            activeFilters.push(option);
             selectorOptions[optionIndex] = [selectorOptions[optionIndex][0], false]
             
             loadSelectorOptions();
@@ -148,22 +193,110 @@ const removeFilter = (button, filterValue) =>{
         }
     });
 
-    activeFilterValues.splice(activeFilterValues.indexOf(filterValue), 1); //Removes the filter from the activeFilterValues list
+    activeFilters.splice(activeFilters.indexOf(filterValue), 1); //Removes the filter from the activeFilters list
     loadSelectorOptions();
 }
 const clearFilters = () =>{
-    activeFilterValues = []; //Clears active Filter
-
+    activeFilters = []; //Clears active Filter
     setupInitialOptions();
     setSortType(); //Reset Sort
-    loadSelectorOptions();
+    
     divFilters.replaceChildren(); //clears buttons
+    inputSearchBar.value = "";
+    loadSelectorOptions();
 }
 const loadRecipeDisplays = () =>{
-    divRecipeDisplay.replaceChildren();
-    for (let i = 0; i< recipieList.length; i++){
-        displayRecipe(recipieList[i]);
+    //--Sort List
+    //Setup temp list
+    let tempRecipeList = [];
+    recipieList.forEach(recipe =>{
+        tempRecipeList.push(recipe);
+    })
+    //Sort the list
+    const existingSortButton = getElement("#sort-button");
+    if(existingSortButton != null){
+        let sortKey;
+        switch(existingSortButton.value.toLowerCase()){
+            case "alphabeticaly":
+                sortKey = 0;
+                break;
+            case "calories":
+                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first
+                sortKey = 6;
+                break;
+            case "prep time":
+                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first    
+                //Format to minutes
+                tempRecipeList.forEach(recipe =>{
+                    let prepTime = recipe[4];
+                    if(prepTime.includes("h")){
+                        let hIndex = prepTime.indexOf("h");
+                        recipe[4] = ((/*Hours*/parseInt(prepTime.substring(0, hIndex)) * 60) + /*Minutes*/ parseInt(prepTime.substring(hIndex + 2, prepTime.length - 1))).toString();
+                    }
+                    else{ //Drop the m
+                        recipe[4] = prepTime.substring(0, prepTime.length - 1);
+                    }
+                })
+                sortKey = 4;
+                break;
+            case "servings":
+                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first
+                sortKey = 5;
+                break;
+        }
+        //Sort
+        sortRecipes(tempRecipeList, sortKey, existingSortButton);
+
+        //Re-format Prep Time
+        if(existingSortButton.value.toLowerCase() == "prep time"){
+            tempRecipeList.forEach(recipe =>{
+                const prepTime = parseInt(recipe[4]);
+                let prepTimeDisplay = "";
+                
+                let prepTimeHour = Math.floor(prepTime / 60);
+                let prepTimeMinutes = prepTime % 60;
+    
+                if(prepTimeMinutes == 0){//Even Hour
+                    prepTimeDisplay = prepTimeHour + "h";
+                }
+                else if(prepTimeHour == 0){//Under an hour
+                    prepTimeDisplay = prepTime + "m";
+                }
+                else{//Hours and minutes
+                    prepTimeDisplay = prepTimeHour + "h " + prepTimeMinutes + "m";
+                }
+                recipe[4] = prepTimeDisplay;
+            })
+        }
+        
     }
+
+    //Display
+    divRecipeDisplay.replaceChildren();
+    //No Filters
+    if(activeFilters.length == 0){
+        for (let i = 0; i< tempRecipeList.length; i++){
+            if(tempRecipeList[i][0].toLowerCase().includes(inputSearchBar.value.toLowerCase()) || inputSearchBar.value == ""){
+                displayRecipe(tempRecipeList[i]);
+            }
+        }
+    }
+    else{//Any amount of filters
+        for (let i = 0; i< tempRecipeList.length; i++){
+            let doesMeetConditions = true;
+            activeFilters.forEach(filter =>{
+                if(tempRecipeList[i][7].includes(filter) == false){
+                    doesMeetConditions = false;
+                }
+            })
+            if(doesMeetConditions){
+                if(tempRecipeList[i][0].toLowerCase().includes(inputSearchBar.value.toLowerCase()) || inputSearchBar.value == ""){
+                    displayRecipe(tempRecipeList[i]);
+                }
+            }
+        }
+    }
+    
 }
 //Sort
 const setSortType = () =>{
@@ -197,6 +330,7 @@ const setSortType = () =>{
     }
     //Reset Select back to default value
     selectSort.selectedIndex = 0;
+    loadRecipeDisplays();
 }
 const toggleOrder = () =>{
     const sortButton = getElement("#sort-button");
@@ -287,13 +421,14 @@ const selectSort = getElement("#sort-options")
 const optionDefaultFilter = getElement("#filter-default");
 const optionDefaultSort = getElement("#sort-default")
 const buttonClearFilters = getElement("#reset");
-
+const inputSearchBar = getElement("#search")
 //Event Listeners
 document.addEventListener("DOMContentLoaded", () =>{
     setupInitialOptions();
     loadRecipes();
     loadSelectorOptions();
     selectFilter.addEventListener("change", addFilter);
-    selectSort.addEventListener("click", setSortType);
+    selectSort.addEventListener("change", setSortType);
     buttonClearFilters.addEventListener("click", clearFilters);
+    inputSearchBar.addEventListener("change", loadRecipeDisplays)
 });

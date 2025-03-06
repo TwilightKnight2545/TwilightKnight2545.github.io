@@ -1,8 +1,6 @@
 /* Selector and Clear Filter Button*/
-select#filter-options, select#sort-options, button#reset{
-    display: block;
+select#filter-options, select#sort-options, button#reset, input#search{
     appearance: none;
-    width: 100%;
 
     border: 1px solid #EDF2F4;
     border-radius: 5px;
@@ -13,11 +11,24 @@ select#filter-options, select#sort-options, button#reset{
     /* font-weight: bold; */
     font-style: oblique;
     
-    padding: 0.5em 1em;
+    padding: 0.5rem 0.5vw;
     margin-bottom: 0.5rem;
 }
+select#filter-options, select#sort-options, button#reset{
+    display: inline-block;
+    width: 6vw;
+}
+input#search{
+    display: block;
+    width: 100%;
+    padding: 0.25em 0;
+    font-size: 80%;
+}
+
 button#reset{
+    display: block;
     font-size: 70%;
+    width: 12vw;
 }
 select#filter-options:hover, select#filter-options:focus, button#reset:hover, button#reset:focus, select#sort-options:hover, select#sort-options:focus{
     border-color: #708D94;
@@ -36,35 +47,35 @@ option.seperator{
 }
 /* Divs */
 div#recipe-list{
-    display: grid;
-    grid-template: 1fr / 1fr 6fr;
+    /* display: grid;
+    grid-template: 1fr / 1fr 6fr; */
     h2{
         margin-bottom: 0.5em;
     }
 }
 div#controls{
     display: grid;
-    height: 60vh;
-    grid-column: 1;
-    grid-template: 1fr 7fr / 1fr ;
-}
-div#recipe-display{
-    grid-column: 2;
+    /* height: 60vh; */
+    /* grid-column: 1; */
+    grid-template: 1fr/ 13vw 7fr;
 }
 div#buttons{
     /* display: block; */
-    grid-row: 1;
-    width: 6rem;
+    grid-column: 1;
+    width: 100%;
 }
 div#filters{
-    grid-row: 2;
+    grid-column: 2;
+    border: 1px solid #EDF2F4;
+    border-radius: 5px;
+    padding: 0.25em;
 }
 /* Filters */
 button.filter-button, button#sort-button{
     padding: 0.5em;
     margin-right: 0.5rem;
     margin-bottom: 0.25rem;
-    width: 75%;
+    /* width: 5vw; */
     /* Color */
     background-color: #FFC776;
     border-radius: 5px;
@@ -85,20 +96,20 @@ button.filter-button i{
     font-size: 70%;
     padding-right: 0.5em;
 }
-/* Sort Button */
 button#sort-button{
     /* Color */
     background-color: #CFFFCF;
     font-weight: bold;
-    font-size: 80%;
+    /* font-size: 70%; */
 
 }
+
 /* Recipe Displays */
 div.recipe{
     display: grid;
     grid-template: 1fr / 1fr 5fr;
-    width: 90%;
-    margin: 1rem 2rem;
+    width: 95%;
+    margin: 1rem;
     padding: 1rem;
     /* Color */
     background-color: #FFF;
