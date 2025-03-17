@@ -16,7 +16,7 @@ const displayMessage = () =>{
         "It's a scientific fact that 100% of people who read this are amazing!", //10
         ":)",
         "🏳️‍🌈🏳️‍⚧️🏳️‍🌈🏳️‍⚧️🏳️‍🌈🏳️‍⚧️🏳️‍🌈🏳️‍⚧️🏳️‍🌈",
-        "Life can be hard, but the fact that you're here means you're winning!",
+        "Life can be hard, but the fact that you're still here means you're winning!",
         "You are worth it!",
         "Studies show that people who smile often are also likely grin!", //15
         "Knock Knock! (p.1)",

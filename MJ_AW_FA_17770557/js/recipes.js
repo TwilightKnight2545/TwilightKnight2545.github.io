@@ -101,6 +101,7 @@ const setupInitialOptions = () =>{
     addOption("Misc.", "seperator");
     addOption("< 15min Prep", "under-fifteen-prep");
     // addOption("Requires Oven", "requires-oven");
+    // addOption("Favourites", "favourites");
     
     filterList = selectorOptions;
 }

@@ -4,6 +4,12 @@ img#first-home{
     width: 90%;
     margin: 0 auto;
 }
+img#cooking-image{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    filter: contrast(0.8) saturate(0.8);
+}
 /* Housing */
 
 /* Job Search */

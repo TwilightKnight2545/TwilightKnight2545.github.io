@@ -12,5 +12,18 @@ Are you pleased with your progress so far?
 Is there anything you need from me? - Nope!
 
 Feedback/Fixes:
-Rene: 	Paste my feedback here
-Fixes:  Tell me how and where you made the fixes
+Rene: 
+
+MJ, your pages look wonderful. Try to trim down some of the text on the home page; it is a bit take heavy.  Under What Does This Guide Cover? Instead of starting with The Housing page... You can change to be something like this:
+
+Housing - what to consider, the pros and cons of on-campus housing, and whether renting/leasing is the way to go. Fewer words, same content.
+
+Meal planning may be under construction, but what you have is fabulous. Looking at the JS, in loadRecipeDisplays, you have comments "//Sorts Alphabetically first". If that is true for all of them, then you may be able to do sortRecipes(tempRecipeList, 0, existingSortButton, "asc");  before the switch. JavaScript has a built-in sort for arrays. array.sort() - asc and array.reverse() - desc.
+
+Some of your variable names could be improved. If I get your meaning of hIndex, it should be changed to hoursIndex.
+
+
+Fixes:
+- Adjusted the loadRecipeDisplays method in recipes.js to sort Alphabetically first for all sort methods
+- Re-worked the "What Does This Guide Cover" section to be picture links that display text when hovered over. This creates more visual interest, and breaks it up from all the text.
+- Removed the hIndex variable, and switched the code to make use of split() instead.

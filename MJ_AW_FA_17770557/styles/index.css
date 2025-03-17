@@ -1,0 +1,93 @@
+div#image-link-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+a.image-links{
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    margin: 0.5rem;
+    transition: all 0.25s;
+    /* Background */
+    background-color: #FFF;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    /* Elements */
+    
+    h4{
+        font-size: 190%;
+        font-weight: bold;
+
+        border-bottom: 1px solid #FFFFFF00;
+        width: 15rem;
+        margin: 0 auto;
+        padding-bottom: 0.25rem;
+    }
+    p{
+        display: block;
+        font-size: 120%;
+        transform: scale(0.8);
+        margin-left: 0;
+        padding: 0 1rem;
+    }
+    h4, p{
+        text-align: center;
+        margin-top: 4rem;
+        color: #FFFFFF00;
+        text-shadow: 2px 2px 4px #00000000;
+        transition: all 0.5s;
+    }
+}
+/* Hover */
+a.image-links:hover, a.image-links:focus{
+    background-color: #7f7f7f;
+    h4, p{
+        color: #FFFFFFFF;
+        text-shadow: 2px 2px 4px #000;
+    }
+    h4{
+        margin-top: 2rem;
+        border-color: #FFF;
+    }
+    p{
+        margin-top: 2rem;
+        transform: scale(1);
+    }
+}
+/* Images */
+a#housing{
+    background-image: url(../images/home/housing-link.png);
+}
+a#job-searching{
+    background-image: url(../images/home/job-search-link.png);
+    background-position-x: center;
+}
+a#transportation{
+    background-image: url(../images/home/transportation-link.png);
+    background-position-x: center;
+    background-size: 180%;
+}
+a#food{
+    background-image: url(../images/recipes/13black-bean-soup.png);
+    background-size: 110%;
+    background-position: 10% 60%;
+}
+a#budgeting{
+    background-image: url(../images/home/budgeting-link.png);
+    background-position-x: center;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 400px){
+    a#housing{
+        background-size: 180%;
+    }
+    a#job-searching{
+        background-size: 160%;
+    }
+    a#budgeting{
+        background-size: 150%;
+    }
+}
