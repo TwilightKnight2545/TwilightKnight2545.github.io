@@ -69,11 +69,21 @@ footer p.copyright{
 footer div.socials{
     display: block;
 }
+footer p#random_message{
+    display: block;
+    margin: 0.25em auto;
+    padding: 0.25em;
+    width: 50%;
+    border-top: 1px solid #708D94;
+
+    font-size: 85%;
+    /* font-style: oblique; */
+    color: #FFF;
+}
 footer div.socials p{
     display: block;
     width: 50%;
     margin: 0 auto;
-    margin-top: 0.5em;
     padding-top: 0.5em;
     font-size: 85%;
     font-weight: bold;
@@ -99,5 +109,19 @@ footer div.socials a i{
         width: 90%;
         font-size: 90%;
         padding: 0.25em 0.5em;
+    }
+}
+@media only screen and (max-width: 643px){
+    header h1{
+        font-size: 300%;
+        text-align: center;
+        text-shadow: 0 0 8px black;
+    }
+}
+@media only screen and (max-width: 643px){
+    header h1{
+        font-size: 300%;
+        text-align: center;
+        text-shadow: 0 0 8px black;
     }
 }

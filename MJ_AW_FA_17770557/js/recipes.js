@@ -41,19 +41,19 @@ const sortRecipes = (tempRecipeList, sortKey, existingSortButton, order = existi
         let y = b[sortKey];
         if(sortKey == 5){//Triggers for servings
             if(x.includes("-")){
-                if(order == "asc"){ //Use first number
-                    x = x.substring(0, x.indexOf("-"));
+                if(order == "asc"){ //Use first number -- basically, if its sorting from least servings to most, use the larger number
+                    x = x.split("-")[0];
                 }
                 else{ //Use second number
-                    x = x.substring(x.indexOf("-") + 1, x.length);
+                    x = x.split("-")[1];
                 }
             }
             if(y.includes("-")){
                 if(order == "asc"){ //Use first number
-                    y = y.substring(0, y.indexOf("-"));
+                    y = y.split("-")[0];
                 }
                 else{ //Use second number
-                    y = y.substring(y.indexOf("-") + 1, y.length);
+                    y = y.split("-")[1];
                 }
             }
         }
@@ -91,6 +91,7 @@ const setupInitialOptions = () =>{
     addOption("Breakfast", "breakfast");
     // addOption("Lunch", "lunch");
     // addOption("Dinner", "dinner");
+    addOption("Dessert", "dessert");
     addOption("Dietary Restrictions", "seperator");
     addOption("Dairy-Free", "dairy-free");
     addOption("Gluten-Free", "gluten-free");
@@ -138,9 +139,31 @@ const loadRecipes = () =>{
 
     addRecipe("Stuffed Bell Peppers", "'Stuffed Bell Peppers have been a huge favorite of mine since my aunt first made them for me many many years ago. At the time it seemed like such an elaborate, fancy recipe, but who knew they were really this simple to make! It’s a classic comfort food recipe that’s hearty, filling, easy to customize, and can feed a large family.' - Marsha McDougal", "../../images/recipes/15stuffed-bell-peppers.png", "https://www.budgetbytes.com/stuffed-bell-peppers/#:~:text=SHARE%20THIS%20RECIPE-,STUFFED%20BELL%20PEPPERS,-4.59%20from%2092", "1h 5m", "6", "454", ["gluten-free"]);
     //16-20
+    addRecipe("Vegetable Soup", "'This Vegetable Soup has become one of my most popular soup recipes and for good reason! It's healthy, it's comforting and 1,000 times better than what you'll get in a can! Makes 15 cups.' - Jaclyn", "../../images/recipes/16-vegetable-soup.png", "https://www.cookingclassy.com/vegetable-soup/#:~:text=PRINT%20RECIPE-,Vegetable%20Soup,-This%20Vegetable%20Soup", "55m", "8", "198", ["gluten-free", "vegetarian"]);
 
+    addRecipe("Chicken Quesadillas", "'This really is the best chicken quesadillas recipe! So easy, these fajita-style quesadillas taste just as good, if not better, than any restaurant!' - Mel", "../../images/recipes/17-chicken-quesadilas.png", "https://www.melskitchencafe.com/the-best-chicken-quesadillas/#:~:text=Pastitsio%20%7BCasserole%2DStyle%7D-,The%20Best%20Chicken%20Quesadillas,-yield%3A%208", "30m", "8", "456", []);
+
+    addRecipe("Chicken Pot Pie", "'This traditional Chicken Pot Pie recipe is easy to make, with a buttery, flaky pie crust and creamy chicken and vegetable filling.' - Lauren Allen", "../../images/recipes/18-chicken-pot-pie.png", "https://tastesbetterfromscratch.com/chicken-pot-pie/#:~:text=from%201022%20votes-,Chicken%20Pot%20Pie,-This%20traditional%20Chicken", "1h 30m", "8", "431", []);
+
+    addRecipe("Fried Rice", "'Learn how to make fried rice with this classic recipe. It only takes 15 minutes to make, it’s easy to customize with your favorite add-ins, and it’s SO flavorful and delicious!' - Ali", "../../images/recipes/19-fried-rice.png", "https://www.gimmesomeoven.com/fried-rice-recipe/#:~:text=Black%20Pepper%20Chicken-,FRIED%20RICE,-5%20Stars", "15m", "4-6", "918", ["gluten-free", "vegetarian", "under-fifteen-prep"]);
+
+    addRecipe("Vegetable Omelette", "'With just 5 minutes of prep and a good pan, this easy recipe will teach you how to make a vegetable omelette. So grab an onion, pepper, mushrooms, and cheddar cheese, and let's cook breakfast!' - Sarah Bond", "../../images/recipes/20-veggie-omelette.png", "https://www.liveeatlearn.com/how-to-make-an-omelette/#:~:text=print-,How%20To%20Make%20A%20Vegetable%20Omelette%20(Perfect%20Every%20Time!),-5%20from%2016", "15m", "1", "368", ["breakfast", "gluten-free", "low-carb", "vegetarian", "under-fifteen-prep"]);
 
     //21-25
+    addRecipe("Grilled Cheese Sandwich", "'Learn how to make the best Grilled Cheese sandwich with a crisp, buttery exterior and gooey cheese center. It's perfect for dipping into warm tomato soup.' - Natasha Kravchuk", "../../images/recipes/21-grilled-cheese.png", "https://natashaskitchen.com/grilled-cheese-sandwich/#:~:text=Grilled%20Cheese%20Sandwich%20Recipe", "30m", "4", "499", ["vegetarian"]);
+
+    addRecipe("Easy Egg Fried Rice", "'This egg fried rice is quick to make with instant rice. It's easy to customize with other vegetables or leftover roast meat.' - Krista B", "../../images/recipes/22-egg-fried-rice.png", "https://www.allrecipes.com/recipe/23298/egg-fried-rice/#:~:text=FRIED%20RICE%20RECIPES-,Easy%20Egg%20Fried%20Rice,-4.5", "20m", "4", "106", ["gluten-free", "low-carb", "vegetarian"]);
+
+    addRecipe("Vegetable Quesadillas", "'My easy vegetable quesadilla recipe combines delicious spiced veggies and gooey cheese. Our easy spice mixture makes these taste amazing. Use whatever vegetable you have on hand!' - Adam & Joanne", "../../images/recipes/23-vegetable-cheese-quesadillas.png", "https://www.inspiredtaste.net/48470/vegetable-quesadillas/#:~:text=cream%20or%20crema.-,The%20Best%20Vegetable%20Quesadillas,-5.0%20(6%20reviews", "25m", "4", "313", ["vegetarian"]);
+
+    addRecipe("Soft Chocolate Chip Cookies", "'These are THE BEST soft chocolate chip cookies! No chilling required. Just ultra thick, soft, classic chocolate chip cookies!' - Lindsay \n\n (Editor's Note: Can confirm, these are delicious!)", "../../images/recipes/24-chocolate-chip-cookies.png", "https://pinchofyum.com/the-best-soft-chocolate-chip-cookies#:~:text=the%20next%20level.-,The%20Best%20Soft%20Chocolate%20Chip%20Cookies,-5%20Stars", "20m", "12", "250", ["dessert", "vegetarian"]);
+
+    addRecipe("Strawberry Crisp", "'This Fresh Strawberry Crisp is the best summer dessert ever! Fresh juicy strawberries are topped with a buttery and crumbly oat topping, and is absolutely swoothworthy with a big scoop of vanilla ice cream on top!' - Ashlyn", "../../images/recipes/25-strawberry-crisp.png", "https://belleofthekitchen.com/fresh-strawberry-crisp-recipe/#:~:text=Recipe%3A-,Strawberry%20Crisp%20Recipe,-yield%3A%208", "35m", "8", "387", ["dessert", "vegetarian"]);
+    //26-30
+    addRecipe("Instant Pot Loaded Potato Soup", "'This Instant Pot Loaded Potato Soup is creamy, delicious, and tastes like you slaved over it all day! It’s easy to prepare and is ready in a flash thanks to the Instant Pot. There’s also a slow cooker version if you’d rather prepare it that way!' - Ashlyn", "../../images/recipes/26-loaded-potato-soup.png", "https://belleofthekitchen.com/instant-pot-loaded-potato-soup/#:~:text=Recipe%3A-,Instant%20Pot%20Loaded%20Potato%20Soup,-(with%20a%20slow", "33m", "6", "481", []);
+
+    
+
 }
 const loadSelectorOptions = () =>{
     selectFilter.replaceChildren() //Clears Options
@@ -216,22 +239,20 @@ const loadRecipeDisplays = () =>{
     const existingSortButton = getElement("#sort-button");
     if(existingSortButton != null){
         let sortKey;
+        sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first
         switch(existingSortButton.value.toLowerCase()){
             case "alphabeticaly":
                 sortKey = 0;
                 break;
             case "calories":
-                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first
                 sortKey = 6;
                 break;
-            case "prep time":
-                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first    
+            case "prep time": 
                 //Format to minutes
                 tempRecipeList.forEach(recipe =>{
                     let prepTime = recipe[4];
                     if(prepTime.includes("h")){
-                        let hIndex = prepTime.indexOf("h");
-                        recipe[4] = ((/*Hours*/parseInt(prepTime.substring(0, hIndex)) * 60) + /*Minutes*/ parseInt(prepTime.substring(hIndex + 2, prepTime.length - 1))).toString();
+                        recipe[4] = (/*Hours*/parseInt(prepTime.split("h")[0] * 60) + /*Minutes*/ parseInt(prepTime.split("h")[1].trim())).toString();
                     }
                     else{ //Drop the m
                         recipe[4] = prepTime.substring(0, prepTime.length - 1);
@@ -240,7 +261,6 @@ const loadRecipeDisplays = () =>{
                 sortKey = 4;
                 break;
             case "servings":
-                sortRecipes(tempRecipeList, 0, existingSortButton, "asc"); //Sorts Alphabetically first
                 sortKey = 5;
                 break;
         }

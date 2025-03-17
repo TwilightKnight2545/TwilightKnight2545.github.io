@@ -92,19 +92,21 @@ body{
     flex-direction: column;
     box-shadow: 0 2px 4px #444546;
     min-height: 100vh;
+    background: #457984;
 }
 /* Main */
 main{
     display: grid;
     flex: 1;
     grid-template:  1fr / 5fr 2fr; /*1 row, 2 columns*/
+    background-color: white;
 }
 /* Section */
 section{
     grid-row: 1;
     grid-column: 1;
     border-right: 3px solid #EDF2F4;
-    box-shadow: 2px 1px 4px gray;
+    box-shadow: 2px 1px 4px #444546;
 
     padding: 2em 2em 0.5em 5em;
     
@@ -167,11 +169,35 @@ aside ul li p{
         font-size: 90%;
     }
 }
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px){ /*Flip to Mobile View*/
     #mobile_menu{
         display: block;
     }
     #nav_menu{
         display: none;
+    }
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+        aside{
+            display: block;
+            box-shadow: 2px 1px 8px #444546;
+            ul li{
+                margin-bottom: 1.5em;
+            }
+        }
+        section{
+            display: block;
+            padding: 2em;
+            
+        }
+    }
+}
+@media only screen and (max-width: 643px){
+    section{
+        padding: 1em;
+        img#first-home{
+            width: 90vw;
+        }
     }
 }

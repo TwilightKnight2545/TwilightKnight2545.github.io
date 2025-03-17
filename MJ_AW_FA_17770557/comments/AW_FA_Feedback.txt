@@ -1,0 +1,16 @@
+--------------------------------------------------
+FP 02
+--------------------------------------------------
+Time on this part  ~15 hours
+Total for the project ~22 hours
+
+Questions:
+Are you pleased with your progress so far?
+
+	Very much so. I have the basis for the rest of my website, and made a great start on the Meal Planning Page. The JavaScript has been very fun to work on so far!
+
+Is there anything you need from me? - Nope!
+
+Feedback/Fixes:
+Rene: 	Paste my feedback here
+Fixes:  Tell me how and where you made the fixes

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Record</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header-footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Geo:ital@0;1&display=swap" rel="stylesheet">
+</head>
+    <body id="body" class="zero-of-three">
+        <header>
+            <!-- This Line is just for the GitHub page, pretty sure it would break in a single project -->
+            <!-- <a href="../index-hub.html" class="top_level_home">🏠︎</a> -->
+            <h1>Advanced Web A04 Assignment</h1>
+            <h2>Dates, Validations, Exceptions</h2>
+            <h3>Purchase Records</h3>
+            
+        </header>
+        <main>
+            <section>
+                <div class="entry-field">
+                    <label for="email-input">Email: </label>
+                    <input type="email" id="email-input" placeholder="ex. averyrealemailadress@website.com">
+                    <span class="required-message" id="for-email">*</span>
+                </div>
+
+                <div class="entry-field">
+                    <label for="date-input">Date of Purchase: </label>
+                    <input type="date" id="date-input">
+                    <span class="required-message" id="for-date">*</span>
+                </div>
+
+                <div class="entry-field">
+                    <label for="purchase-amount-input">Purchase Amount: </label>
+                    <input type="text" id="purchase-amount-input" placeholder="ex. 100.12">
+                    <span class="required-message" id="for-purchase-amount">*</span>
+                </div>
+
+                <div class="entry-field">
+                    <label for="discount-type-selector">Discount Type: </label>
+                    <select name="discount-type" id="discount-type-selector">
+                        <option value="none">None</option>
+                        <option value="military">Military - 10%</option>
+                        <option value="student">Student - 10%</option>
+                        <option value="aarp">AARP - 15%</option>
+                    </select>
+                </div>
+                
+                <button id="button-process">Process Information</button>
+                <button id="button-reset">Reset</button>
+
+                <div class="entry-field">
+                    <label for="form-output">Discounted Price: </label>
+                    <input type="text" id="form-output" readonly>
+                </div>
+            </section>
+            <script src="js/purchase-records.js"></script>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

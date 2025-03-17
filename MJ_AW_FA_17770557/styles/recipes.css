@@ -22,12 +22,11 @@ input#search{
     display: block;
     width: 100%;
     padding: 0.25em 0;
-    font-size: 80%;
+    font-size: 90%;
 }
 
 button#reset{
     display: block;
-    font-size: 70%;
     width: 12vw;
 }
 select#filter-options:hover, select#filter-options:focus, button#reset:hover, button#reset:focus, select#sort-options:hover, select#sort-options:focus{
@@ -152,6 +151,7 @@ div.recipe img{
     width: 100%;
     /* border: 2px solid #EDF2F4; */
     box-shadow: 1px 1px 3px #444546;
+    filter: saturate(1.05);
 }
 div.recipe div.recipe-details{
     grid-column: 2;
@@ -178,11 +178,75 @@ div.recipe div.recipe-details ul li.recipe-info{
 }
 div.recipe div.recipe-details p{
     margin-top: 1em;
+    white-space: pre-line;
 }
 
 /* Media Queries */
 @media only screen and (max-width: 1230px){
     div.recipe p{
         font-size: 80%;
+    }
+}
+@media only screen and (max-width: 850px){
+    div.recipe{
+        width: 80vw;
+        grid-template: 1fr / 1fr 3fr;
+        margin: 1em auto;
+    }
+}
+@media only screen and (max-width: 715px){ /*Flip to Mobile View*/
+    div#recipe-display{
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+    select#filter-options, select#sort-options{
+        display: block;
+        width: 12vw;
+    }
+    div.recipe{
+        width: 45%;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        /* margin: 1em auto; */
+        img{
+            width: 80%;
+            margin: 0.5rem auto;
+        }
+        h4{
+            text-align: center;
+        }
+    }
+    div.recipe:hover, div.recipe:focus{
+        transform: scale(1.05);
+        grid-template: 1fr / 1fr 3fr;
+        p{
+            /* font-size: 90%; */
+        };
+        h4{
+            font-size: 160%;
+        }
+        ul li{
+            font-size: 100%;
+            margin-bottom: 0.1em;
+        }
+    }
+}
+@media only screen and (max-width: 575px){
+    div#recipe-display{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    div.recipe{
+        width: 70vw;
+        div.recipe-details{
+            ul li{
+                font-size: 90%;
+            }
+            p{
+                font-size: 90%;
+            }
+        } 
     }
 }
