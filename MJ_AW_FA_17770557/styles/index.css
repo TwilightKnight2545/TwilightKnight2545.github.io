@@ -60,8 +60,8 @@ a.image-links:hover, a.image-links:focus{
 a#housing{
     background-image: url(../images/home/housing-link.png);
 }
-a#job-searching{
-    background-image: url(../images/home/job-search-link.png);
+a#mental-health{
+    background-image: url(../images/home/mental-health-link.png);
     background-position-x: center;
 }
 a#transportation{
@@ -84,7 +84,7 @@ a#budgeting{
     a#housing{
         background-size: 180%;
     }
-    a#job-searching{
+    a#mental-health{
         background-size: 160%;
     }
     a#budgeting{

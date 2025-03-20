@@ -28,7 +28,7 @@
             <ul>
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../pages/housing/index.html">Housing</a></li>
-                <li><a href="../../pages/job-searching/index.html">Job Searching</a></li>
+                <li><a href="../../pages/mental-health/index.html">Mental Health</a></li>
                 <li><a href="../../pages/transportation/index.html">Transportation</a></li>
                 <li class="current-page"><a href="../../pages/food/index.html">Meal Planning</a></li>
                 <li><a href="../../pages/budgeting/index.html">Budgeting</a></li>
@@ -39,10 +39,14 @@
                 <div class="sticky">
                     <h3 style="cursor: help;" title="TLDR;">Key Information</h3>
                     <ul>
-                        <li><p>Test 1</p></li>
-                        <li><p>Test 2</p></li>
-                        <li><p>Test 3</p></li>
-                        <li><p>Test 4</p></li>
+                        <li><p>Fast food is notoriously unhealthy, and can be quite expensive. Grocery stores can be cheaper alternatives to get the ingredients to make quick and healthy meals.</p></li>
+                        <li><p>If the option is avaliable, having dinner with your family and friends can be a nice way to save money while keeping in touch with them!</p></li>
+                        <li><p>Planning out your meals for the week can help you save time, money, and sanity.</p></li>
+                    </ul>
+                    <h3 style="cursor: help;" title="TLDR;">Additional Resources</h3>
+                    <ul>
+                        <li><p><a href="https://www.thekitchn.com/the-beginners-guide-to-meal-planning-what-to-know-how-to-succeed-and-what-to-skip-242413" class="in-text-link">Beginner's Guide to Meal Planning</a></p></li>
+                        <li><p><a href="https://www.reddit.com/r/mealprep/" class="in-text-link">r/MealPrep</a></p></li>
                     </ul>
                 </div>
             </aside>
@@ -50,22 +54,99 @@
                 <img src="../../images/couple-cooking.png" alt="Couple Moving into a new home" id="cooking-image">
                 <figcaption>Photo by Jason Briscoe on <a href="https://unsplash.com" target="_blank" class="in-text-link">Unsplash</a></figcaption>
                 <div class="article">
-                    <h1>How Not To Starve</h1>
+                    <h1>How To Not Starve Yourself</h1>
                     <p class="credits">MJ Wickstrom</p>
                     <p>
                         One of the most pressing concerns with moving out is what to eat. Most people are used to their parents providing meals, and as such, are often not prepared to feed themselves. And while many seem to default to ordering take-out or delivery pizza, there are better, and often cheaper ways to go about planning your meals.
                     </p>
+                    <p>
+                        This page will cover alternatives to fast-food, the basics of cooking for yourself, how to plan out meals throughout the week, and a curated list of easy recipes to try out.
+                    </p>
                     <h2>Alternatives to Fast-Food</h2>
                     <p>
-                        This is the first article section!
+                        It can be tempting to college students freshly living alone to primarily order from their favorite fast-food joint for their meals. However, as most people find out rather quickly, it’s far from a winning strategy. While fast-food may seem easier than cooking yourself a meal every night, the cost will add up quickly. (Ex. a $5 meal every day would cost $140/month, and that’s not even counting breakfast or lunch.)
                     </p>
+                    
+                    <div id="fast-food-price-calc">
+                        <h4 style="cursor: help;"> ▶ How Much Will Fast Food Cost You?</h4>
+                        <p>Enter in how many times you order fast-food and how much it costs to get an estimate of how much you can save by moving away from fast-food!</p>
+                        <div id="cost-controls">
+                            <div class="inputs">
+                                <label for="meals-per-week">Orders per Week:</label>
+                                <input type="number" name="meals-per-week" id="meals-per-week" min="1" step="1" title="Enter the number of fast-food meals per week" value="1" required>
+    
+                                <label for="price-of-meal">Price per Order:</label>
+                                <input type="text" name="price-of-meal" id="price-of-meal" title="Enter the price for each meal" placeholder="$5.00" required>
+                            </div>
+                            <div id="results">
+                                <p id="per-week">$0.00/week</p>
+                                <p id="per-month">$0.00/month</p>
+                            </div>
+                        </div>
+                        <p id="error-message"></span>
+                    </div>
+                    <p>
+                        On top of the drain on your paycheck it wouldn’t exactly be controversial to say that fast-food tends to be less than healthy, at best. Luckily, there are better options that are cheaper and healthier!
+                    </p>
+                    <h4>Grocery Stores Are Your Best Friend</h4>
+                    
+                    <p>
+                        When living alone, grocery stores are going to be your best friend. Stores like Walmart are filled to the brim with a huge variety of different food options at very affordable prices. The trick is figuring out what to purchase! Frozen meals like pizza are a common choice, for being quick and easy to make, but that's just scratching the surface. Bulk food such as rice, broth, and beans can be used to make dozens of tasty, cheap, and healthy dinners. A loaf of bread along with deli meats or peanut butter can make at least a couple weeks worth of lunches, while a container of oatmeal can last you a month or two.
+                    </p>
+                    <p>
+                        An important thing to keep in mind is to never go grocery shopping hungry. At the end of the day, while grocery stores are incredibly useful, the stores exist to make a profit, and they will try to get you to buy stuff you don't need. While okay as an ocasional snack, items such as chips, candy, and various deserts will rack up your bill, and thats not even counting the thousands of other products they sell. Go into a grocery store with a plan and a list, and stick to them. Get in and out as quickly as you can to avoid making impulsive purchases. Your bank account will thank you.
+                    </p>
+                    <h4>A Note About Campus Food</h4>
+                    <p>
+                        If you're attending a college that has a decent mess hall or cafeteria, it can be worth looking into. There are often a variety of dishes served, and it can be quite nice for a quick meal between classes. However, keep in mind that prices for campus food are often comparable to fast food, and sometimes more expensive. You are paying extra for the convinence of having a meal on campus, so if you're trying to save money, just remember that there are most likely more cost-effective options.
+                    </p>
+
+                    <h4>Leaning on Others</h4>
+                    
+                    <p>
+                        Right of the bat, I will acknowledge that this isn’t necessarily an option for everyone. Not everyone may have the best relationship with their parents, or be close enough for it to be practical, but if the option is available to you, having some meals with your family or friends can be an excellent way to cut down on costs. It doesn’t have to be every day, but most parents would likely be more than willing to have their children over at least once a week for dinner. It's not only a way to reduce your expenses, but it's also great to maintain your relationships with your family whom you might otherwise not see as often.  
+                    </p>
+
+                    <h4>Homemade Meals</h4>
+                    
+                    <p>
+                        Making your own meals at home is something that everyone knows is an option, but not everybody thinks is an option for them. There are the common reasons given, "Oh, I don't know how to cook", or "Well I just don't have time to make a meal every night." And well it may be true that cooking isn't necessarily you're forte, or that you don't feel up to making a meal every night after a long shift at work or major study session, the simple fact is that most people are more than capable to make home-cooked meals. As long as you have a stove, some basic cooking supplies (one or two pots and pans), a few groceries, and an internet connection (which I know you have, because you're reading this right now!) then you have everything you need to whip up a simple and delicious meal in half an hour or less! It's really easy to pull up a recipe online and follow the directions, and there is a large variety of dishes to try with your standard grocery supplies.
+                    </p>
+                    <p>
+
+                    </p>
+
                     <h2>Meal Planning</h2>
                     <p>
-                        This is the second article section!
+                        As previously mentioned, one of the biggest concerns college students have in regards to cooking is the time it takes. Most people probably won't have the time to cook a full meal from scratch every day, but that's where meal planning comes in. Meal Planning refers to the practice of preparing your meals for the week ahead of time. This can take several forms, such as pre-selecting recipes and getting the ingredients ready to go so that it's easy to put together a meal each night. Pre-chopping ingredients, washing fruits and vegetables, etc. can help reduce the stress of cooking by simplifying the process when it comes to actually cooking the meal.
+                    </p>
+                    <p>
+                        Another popular way to meal prep is to batch cook a meal, and make several days or even a week or two of meals in one go. This method lets you preserve the extra servings in your refrigerator or freezer, effectively letting you make your own frozen dinners for far cheaper than a store-bought frozen dinner. 
+                    </p>
+                    <p>
+                        Regardless of which method you choose, there are two things that remain important to keep in mind. One, you will want to pick one day or two and set aside time that day for the cooking or meal prep itself. A common strategy is to start on Friday or Saturday by picking up any additional groceries you might need, and then cooking the meals the following day. The weekend is often an excellent time to work on Meal Prep for the week, as you can just throw on some music or a podcast while cooking, serving as a way to decompress from the week.
+                    </p>
+                    <p>
+                        As long as you make sure to refrigerate your meals to keep them from spoiling, Meal Prep can make dinner-time easy and relaxing!
+                    </p>
+                    <div class="helpful-hint">
+                        <h4>
+                            💡Editor's Note
+                        </h4>
+                        <p>
+                            For any ADHD-riddled people like myself who routinely forget to eat meals, Meal Planning can help make sure you eat your three meals a day. By reducing the amount of effort it takes to have a healthy meal.
+                        </p>
+                        <p>
+                            It's a lot easier to step away from what you're doing for ten minutes to reheat a meal in the microwave than it is to have to spend an hour trying to figure out what to make, getting everything ready, actually cooking the meal, and then eating it. 
+                        </p>
+                    </div>
+
+                    <h2>Recipes</h2>
+                    <p>
+                        Here's a list of easy recipes that you can try out. You can sort and filter recipes based on dietary restrictions, time needed to prepare the meal, number of servings, and more!
                     </p>
                 </div>
                 <!-- Recipe Tool -->
-                <h2>Recipes</h2>
                 <input type="text" id="search" placeholder="search">
                 <div id="recipe-list">
                     <div id="controls">

@@ -1,3 +1,86 @@
+/* Article */
+img.food-pics{
+    display: block;
+    float: right;
+    clear: right;
+}
+/* -- Price Calc -- */
+
+div#fast-food-price-calc{
+    background-color: #64848b;
+    border-right: 3px solid #64848b;
+    margin-left: -5rem;
+    margin-right: -2.25rem;
+    margin-bottom: 1rem;
+
+    padding: 0.5rem 3rem;
+    
+    p{
+        margin-bottom: 0.5em;
+    }
+    p, label, h4{
+        color: #EDF2F4;
+    }
+    h4{
+        font-weight: bold;
+        /* font-style: oblique; */
+        color: #EDFF90;
+        margin-bottom: 0.25rem;
+        border-bottom: 1px solid #EDF2F4;
+    }
+    
+    div#cost-controls{
+        display: flex;
+        flex-direction: row;
+        padding-top: 1rem;
+        border-top: 1px solid #EDF2F4;
+        div.inputs{
+            display: inline-block;
+            vertical-align: bottom;
+            width: 15rem;
+
+            label{
+                display: inline-block;
+                width: 9rem;
+            }
+            input{
+                display: inline-block;
+                padding-right: 1rem;
+                text-align: right;
+                margin-bottom: 0.5rem;
+                width: 4rem;
+        
+                background-color: #EDF2F4;
+                border: 0;
+                border-radius: 5px;
+                
+            }
+        }
+        #results{
+            display: inline-block;
+            vertical-align: bottom;
+            width: 70%;
+            margin-left: 2rem;
+            p{
+                display: inline-block;
+                font-size: 150%;
+                margin-left: 1rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+    p#error-message{
+        display: block;
+        color: #EDFF90;
+        font-style: oblique;
+        font-size: 80%;
+        margin: 0;
+    }
+    
+    
+}
+
+/* -- Recipes -- */
 /* Selector and Clear Filter Button*/
 select#filter-options, select#sort-options, button#reset, input#search{
     appearance: none;
@@ -86,6 +169,11 @@ button.filter-button, button#sort-button{
 
 button.filter-button:hover, button.filter-button:focus{
     text-decoration: line-through;
+    font-style: oblique;
+    opacity: 75%;
+}
+
+button#sort-button:hover, button#sort-button:focus{
     font-style: oblique;
     opacity: 75%;
 }
@@ -186,6 +274,19 @@ div.recipe div.recipe-details p{
     div.recipe p{
         font-size: 80%;
     }
+}
+@media only screen and (max-width: 900px){
+    div#fast-food-price-calc{
+        margin-left: -2rem;
+        margin-right: -2.25rem;
+        padding: 0.5rem 1rem;
+        h4{
+            font-size: 130%;
+        }
+        p{
+            font-size: 90%;
+        }
+    }    
 }
 @media only screen and (max-width: 850px){
     div.recipe{

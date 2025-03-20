@@ -4,18 +4,18 @@ img#first-home{
     width: 90%;
     margin: 0 auto;
 }
-img#cooking-image{
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    filter: contrast(0.8) saturate(0.8);
-}
+
 /* Housing */
 
 /* Job Search */
 
 /* Transportation */
 
-/* Meal Planning -- Will be in it's own css file*/
-
+/* Meal Planning -- Most will be in it's own css file*/
+img#cooking-image{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    filter: contrast(0.8) saturate(0.8);
+}
 /* Budgeting */

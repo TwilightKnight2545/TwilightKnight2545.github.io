@@ -8,7 +8,7 @@ let recipieList = []; //[name, description, imagePath, link, prepTime, calories,
 
 let activeFilters = [];
 
-//Helper Functions
+//Recipe Helper Functions
 const addOption = (text, value) =>{
     const element = document.createElement("option");
     // const textNode = document.createTextNode(text);
@@ -35,7 +35,7 @@ const createTag = (innerText, isTagInfo) =>{ //if isTagInfo is true
 const addRecipe = (name, description, imagePath, link, prepTime, servings,calories, tags) =>{
     recipieList.push([name, description, imagePath, link, prepTime, servings, calories, tags]);
 }
-const sortRecipes = (tempRecipeList, sortKey, existingSortButton, order = existingSortButton.getAttribute("order")) =>{
+const sortRecipes = (tempRecipeList, sortKey, existingSortButton, order = existingSortButton.getAttribute("order")) =>{ //Customized sort function to sort the recipe arrays by a specific element
     tempRecipeList.sort(function(a,b){
         let x = a[sortKey];
         let y = b[sortKey];
@@ -82,7 +82,7 @@ const sortRecipes = (tempRecipeList, sortKey, existingSortButton, order = existi
         }
     })
 }
-//--Functions
+//-- Recipe Functions
 //Filters
 const setupInitialOptions = () =>{
     selectorOptions = []; //Clears array, [displayText, value]
@@ -101,12 +101,11 @@ const setupInitialOptions = () =>{
     addOption("Misc.", "seperator");
     addOption("< 15min Prep", "under-fifteen-prep");
     // addOption("Requires Oven", "requires-oven");
-    // addOption("Favourites", "favourites");
     
     filterList = selectorOptions;
 }
 const loadRecipes = () =>{
-    // Add recipes here (Broken up into groups of five to make it easier to search)
+    // Add recipes here (Broken up into groups of five to make it easier to read)
     // 1-5
     addRecipe("Easy Spaghetti", "'This Easy Spaghetti Recipe is ready in just 15 minutes and is a hearty, comforting meal during cooler months. Pair with a side salad or steamed veggies for a full meal and enjoy!' - Averie Sunshine", "../../images/recipes/1spaghetti.png", "https://www.averiecooks.com/easy-15-minute-spaghetti/#:~:text=from%2021%20votes-,Easy%20Spaghetti,-By%20Averie%20Sunshine", "15m", "4-6","941", ["under-fifteen-prep"]);
 
@@ -166,7 +165,7 @@ const loadRecipes = () =>{
     
 
 }
-const loadSelectorOptions = () =>{
+const loadSelectorOptions = () =>{ //Sets up the filter options
     selectFilter.replaceChildren() //Clears Options
     selectorOptions.forEach(option => { //Adds every option in the array to the select element
         if (option[1] == true){
@@ -430,19 +429,65 @@ const displayRecipe = (inputRecipe) =>{
     divRecipeDisplay.appendChild(recipe);
     
 }
-//--Form Elements
+//-- Price Calc Functions
+const validateCalculator = () =>{
+    let price = 0.0;
+        if(inputPrice.value.includes("$")){
+            price = parseFloat(inputPrice.value.substring(1));
+        }
+        else{
+            price = parseFloat(inputPrice.value);
+        }
+        if(!isNaN(price) && parseFloat(price) > 0){ //If price is a number
+            //formats the value -- Not strictly necessary here, but good practice, and it looks nice
+            inputPrice.value = "$" + price.toFixed(2);
+        }
+
+    if(!isNaN(inputMeals.value) && inputMeals.value > 0){
+        if(!isNaN(price)){
+            updateCalculator(parseInt(inputMeals.value), price);
+            errorMessage.innerText = "";
+        }
+        else{
+            errorMessage.innerText = "Please enter a price greater than 0.";
+            outputPerWeek.innerText = "$0.00/week";
+            outputPerMonth.innerText = "$0.00/month";
+            inputPrice.select();
+        }
+    }
+    else{
+        errorMessage.innerText = "Please enter a number greater than 0.";
+        outputPerWeek.innerText = "$0.00/week";
+        outputPerMonth.innerText = "$0.00/month";
+        inputMeals.select();
+    }
+}
+const updateCalculator = (orderQty, price) =>{
+    const pricePerWeek = orderQty * price;
+    const pricePerMonth = pricePerWeek * 4;
+    outputPerWeek.innerText = new Intl.NumberFormat("en-US", {style:'currency', currency: "USD"}).format(pricePerWeek) + "/week";
+    outputPerMonth.innerText = new Intl.NumberFormat("en-US", {style:'currency', currency: "USD"}).format(pricePerMonth) + "/month";
+}
+//-- Form Elements
 //Divs
 const divRecipeList = getElement("#recipe-list");
 const divRecipeDisplay = getElement("#recipe-display");
-const divFilters = getElement("#filters")
-const divSortButton = getElement("#div-sort-button")
+const divFilters = getElement("#filters");
+const divSortButton = getElement("#div-sort-button");
 //Controls
 const selectFilter = getElement("#filter-options");
-const selectSort = getElement("#sort-options")
+const selectSort = getElement("#sort-options");
 const optionDefaultFilter = getElement("#filter-default");
-const optionDefaultSort = getElement("#sort-default")
+const optionDefaultSort = getElement("#sort-default");
 const buttonClearFilters = getElement("#reset");
-const inputSearchBar = getElement("#search")
+const inputSearchBar = getElement("#search");
+//Price Calc
+const inputMeals = getElement("#meals-per-week");
+const inputPrice = getElement("#price-of-meal");
+
+const outputPerWeek = getElement("#per-week");
+const outputPerMonth = getElement("#per-month");
+const errorMessage = getElement("#error-message");
 //Event Listeners
 document.addEventListener("DOMContentLoaded", () =>{
     setupInitialOptions();
@@ -451,5 +496,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     selectFilter.addEventListener("change", addFilter);
     selectSort.addEventListener("change", setSortType);
     buttonClearFilters.addEventListener("click", clearFilters);
-    inputSearchBar.addEventListener("change", loadRecipeDisplays)
+    inputSearchBar.addEventListener("change", loadRecipeDisplays);
+    inputMeals.addEventListener("change", validateCalculator);
+    inputPrice.addEventListener("change", validateCalculator);
 });
