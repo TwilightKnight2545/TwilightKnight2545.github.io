@@ -1,0 +1,26 @@
+header{
+    background-image: url(../images/trim.png);
+    background-color: #30170b;
+    background-size: contain;
+
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    box-shadow: 0 3px 4px #48794b;
+
+    h1{
+        font-size: 240%;
+        text-align: center;
+        color: #c79898;
+        mix-blend-mode: screen;
+        opacity: .55;
+    }
+    a{
+        opacity: .55;
+        background-color: #e7bcbc;
+        border: 0;
+    }
+    a:focus, a:hover{
+        opacity: .35;
+    }
+}

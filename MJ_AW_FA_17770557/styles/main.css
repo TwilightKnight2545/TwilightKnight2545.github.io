@@ -13,6 +13,12 @@ Main.css will handle site-wide formatting including fonts, background colors, st
     margin: 0;
     padding: 0;
 }
+i{
+    font-style: oblique;
+}
+b{
+    font-weight: bold;
+}
 /* Sticky */
 nav.sticky{
     position: sticky;
@@ -23,8 +29,11 @@ nav.sticky{
     /* Only sticks to the top of the screen when the mobile menu is not active */
     aside div.sticky{
         position: sticky;
-        top: 7em;
+        top: 5em;
     }
+}
+@media only screen and(::-webkit-scrollbar: 50%){
+
 }
 /* Fonts */
 h1, h2, h3, h4{
@@ -181,10 +190,14 @@ aside ul li p{
 /* Media Queries */
 @media only screen and (max-width: 1230px){
     main{
-        grid-template:  1fr / 5fr 1fr;
+        grid-template:  1fr / 3fr 1fr;
+    }
+    aside h3{
+        font-size: 140%;
     }
     aside ul li{
-        font-size: 90%;
+        font-size: 75%;
+        margin-bottom: 1em;
     }
 }
 @media only screen and (max-width: 900px){ /*Flip to Mobile View*/

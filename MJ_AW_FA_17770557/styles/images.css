@@ -10,7 +10,11 @@ img#first-home{
 /* Job Search */
 
 /* Transportation */
-
+img#transportation{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
 /* Meal Planning -- Most will be in it's own css file*/
 img#cooking-image{
     display: block;

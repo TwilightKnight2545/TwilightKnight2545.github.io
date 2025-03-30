@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Request</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header-footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <header>
+            <h1>Make a Reservation</h1>
+        </header>
+        <main>
+            <section>
+                <form action="pages/confirm-message.html" method="get">
+                    <fieldset>
+                        <legend>General Info</legend>
+                        
+                        <div>
+                            <label for="arrival-date">Arrival Date:</label>
+                            <input type="date" name="arrival-date" id="arrival-date">
+                            <span id="date-message">*</span>
+                        </div>
+
+                        <div>
+                            <label for="nights">Nights:</label>
+                            <input type="number" id="nights" min="1" value="1">
+                            <span id="nights-message">*</span>
+                        </div>
+
+                        <div>
+                            <label for="adults">Adults:</label>
+                            <select name="adults" id="adults">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="children">Children:</label>
+                            <select name="children" id="children">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="early-checkout">Early Checkout?</label>
+                            <input type="checkbox" name="early-checkout" id="early-checkout">
+                        </div>
+                        
+                    </fieldset>
+                    <fieldset class="type-selector">
+                        <legend>Room Type</legend>
+                        <div>
+                            <input type="radio" name="room-type" id="standard" checked>
+                            <label for="standard">Standard</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="room-type" id="buisness">
+                            <label for="buisness">Buisness</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="room-type" id="suite">
+                            <label for="suite">Suite</label>
+                        </div>
+
+                    </fieldset>
+                    <fieldset class="type-selector">
+                        <legend>Bed Type</legend>
+                        <div>
+                            <input type="radio" name="bed-type" id="king" checked>
+                            <label for="king">King</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bed-type" id="queen">
+                            <label for="queen">Queen</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bed-type" id="double">
+                            <label for="double">Double</label>
+                        </div>
+                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contact Information</legend>
+                        <div>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name">
+                            <span id="name-message">*</span>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="therealestemail@legit.com">
+                            <span id="email-message">*</span>
+                        </div>
+                        <div>
+                            <label for="phone">Phone:</label>
+                            <input type="tel" name="phone" id="phone" placeholder="(555)555-5555">
+                            <span id="phone-message">*</span>
+                        </div>
+                        
+                    </fieldset>
+                    <button type="submit" id="submit">Submit Reservation</button>
+                    <button type="reset" id="reset">Reset</button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
