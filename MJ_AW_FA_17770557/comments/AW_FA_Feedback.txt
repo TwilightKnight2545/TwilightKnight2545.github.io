@@ -1,4 +1,32 @@
 --------------------------------------------------
+FP 03
+--------------------------------------------------
+Time on this part  ~50 hours
+Total for the project ~72 hours
+
+Questions:
+Are you pleased with your progress so far?
+
+	Very much so. I have the basis for the rest of my website, and made a great start on the Meal Planning Page. The JavaScript has been very fun to work on so far!
+
+Is there anything you need from me? - Nope!
+
+Feedback/Fixes:
+Rene: 
+
+MJ, what happened with your github setup that I now need a longer url to access your site? I should be able to get there using just: https://twilightknight2545.github.io but if I try, I get a 404 error.
+
+Any reason why the meal recipes open in a new tab, the your "additional resources" don't? 
+
+Be sure to check your site on the small screen. I ran it from github and there was a couple of issues.
+
+Your project is amazing and I am looking forward to the finished product!
+
+
+Fixes:
+- Adjusted Additional Resource Links to open to a new page
+- Cleaned up the CSS to fix ocassional errors
+--------------------------------------------------
 FP 02
 --------------------------------------------------
 Time on this part  ~15 hours

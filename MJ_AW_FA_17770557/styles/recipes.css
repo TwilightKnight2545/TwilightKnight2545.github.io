@@ -7,24 +7,29 @@ img.food-pics{
 /* -- Price Calc -- */
 
 div#fast-food-price-calc{
+    display: block;
+    width: 100%;
     background-color: #64848b;
-    border-right: 3px solid #64848b;
-    margin-left: -5rem;
-    margin-right: -2.25rem;
+    border-right: 5px solid #64848b;
     margin-bottom: 1rem;
+    
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
-    padding: 0.5rem 3rem;
+    /* padding-left: 3rem; */
     
     p{
         margin-bottom: 0.5em;
     }
     p, label, h4{
         color: #EDF2F4;
+        margin: 0.5rem 3rem;
     }
     h4{
         font-weight: bold;
         /* font-style: oblique; */
         color: #EDFF90;
+        padding-bottom: 0.25rem;
         margin-bottom: 0.25rem;
         border-bottom: 1px solid #EDF2F4;
     }
@@ -34,6 +39,11 @@ div#fast-food-price-calc{
         flex-direction: row;
         padding-top: 1rem;
         border-top: 1px solid #EDF2F4;
+
+        margin: 0 3rem;
+        *{
+            margin: 0;
+        }
         div.inputs{
             display: inline-block;
             vertical-align: bottom;
@@ -98,8 +108,9 @@ select#filter-options, select#sort-options, button#reset, input#search{
     margin-bottom: 0.5rem;
 }
 select#filter-options, select#sort-options, button#reset{
-    display: inline-block;
-    width: 6vw;
+    display: block;
+    width: 12vw;
+    
 }
 input#search{
     display: block;
@@ -108,10 +119,6 @@ input#search{
     font-size: 90%;
 }
 
-button#reset{
-    display: block;
-    width: 12vw;
-}
 select#filter-options:hover, select#filter-options:focus, button#reset:hover, button#reset:focus, select#sort-options:hover, select#sort-options:focus{
     border-color: #708D94;
 }
@@ -120,7 +127,7 @@ option{
     width: 50em;
     font-size: 80%;
     background-color: #EDF2F4;
-    text-align: left;
+    text-align: center;
     color: #4e4e4e;
 }
 option.seperator{
@@ -277,9 +284,7 @@ div.recipe div.recipe-details p{
 }
 @media only screen and (max-width: 900px){
     div#fast-food-price-calc{
-        margin-left: -2rem;
-        margin-right: -2.25rem;
-        padding: 0.5rem 1rem;
+        margin-left: 0;
         h4{
             font-size: 130%;
         }
@@ -296,6 +301,14 @@ div.recipe div.recipe-details p{
     }
 }
 @media only screen and (max-width: 715px){ /*Flip to Mobile View*/
+    div#fast-food-price-calc, div#recipe-display{
+        margin-left: 0;
+    }
+    div#fast-food-price-calc{
+        div#cost-controls{
+            flex-direction: column;
+        }
+    }
     div#recipe-display{
         display: flex;
         /* flex-direction: column; */

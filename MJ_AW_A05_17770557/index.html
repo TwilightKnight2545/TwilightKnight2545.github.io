@@ -20,13 +20,13 @@
                         
                         <div>
                             <label for="arrival-date">Arrival Date:</label>
-                            <input type="date" name="arrival-date" id="arrival-date">
+                            <input type="date" name="arrival-date" id="arrival-date" >
                             <span id="date-message">*</span>
                         </div>
 
                         <div>
                             <label for="nights">Nights:</label>
-                            <input type="number" id="nights" min="1" value="1">
+                            <input type="number" id="nights" min="1" value="1" >
                             <span id="nights-message">*</span>
                         </div>
 
@@ -52,8 +52,8 @@
                         </div>
 
                         <div>
-                            <label for="early-checkout">Early Checkout?</label>
-                            <input type="checkbox" name="early-checkout" id="early-checkout">
+                            <label for="early-check-in">Early Check-in?</label>
+                            <input type="checkbox" name="early-check-in" id="early-check-in">
                         </div>
                         
                     </fieldset>
@@ -98,19 +98,21 @@
                         </div>
                         <div>
                             <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" placeholder="therealestemail@legit.com">
+                            <input type="email" name="email" id="email" placeholder="therealestemail@legit.com" >
                             <span id="email-message">*</span>
                         </div>
                         <div>
                             <label for="phone">Phone:</label>
-                            <input type="tel" name="phone" id="phone" placeholder="(555)555-5555">
+                            <input type="tel" name="phone" id="phone" placeholder="555-555-5555">
                             <span id="phone-message">*</span>
                         </div>
                         
                     </fieldset>
                     <button type="submit" id="submit">Submit Reservation</button>
                     <button type="reset" id="reset">Reset</button>
+                    <script src="js/reservations.js"></script>
                 </form>
+                
             </section>
         </main>
     </body>

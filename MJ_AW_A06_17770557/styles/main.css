@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Text Elements*/
+h1{
+    font-size: 240%;
+}
+h2{
+    font-size: 180%;
+}
+select, option{
+    font-size: 120%;
+}
+/* HTML */
+html{
+    background-color: #f7f2fa;
+}
+/* Body */
+body{
+    display: block;
+    width: 70%;
+    margin: 0.5rem auto;
+
+    background-color: #ffffff;
+}
+/* Images */
+div#menu{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+a.menu-pictures{
+    display: block;
+    width: 15rem;
+    height: 10rem;
+    min-width: 15rem;
+    margin: 0.25rem;
+    transition: all 0.25s;
+    
+    color: #ffffff00;
+    /* Background */
+    background-color: #FFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    /* Elements */
+    p{
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+        
+        font-size: 150%;
+        font-weight: bold;
+
+        transition: all 0.25s;
+    }
+}
+/* Hover */
+a.menu-pictures:hover, a.menu-pictures:focus{
+    background-color: #7f7f7f;
+    p{
+        color: #FFF;
+    }
+}
+a#biscotti{
+    background-image: url(../images/biscotti.jpg);
+}
+a#cappuccino{
+    background-image: url(../images/cappuccino.jpg);
+}
+a#coffee{
+    background-image: url(../images/coffee.jpg);
+}
+a#espresso{
+    background-image: url(../images/espresso.jpg);
+}
+a#latte{
+    background-image: url(../images/latte.jpg);
+}
+a#scone{
+    background-image: url(../images/scone.jpg);
+}
+
+/* Select */
+select{
+    display: block;
+    width: 70%;
+    margin: 0.25rem auto;
+}

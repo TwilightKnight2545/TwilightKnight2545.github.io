@@ -8,6 +8,15 @@
 h1, legend, button, a{
     font-family: "Boldonse";
 }
+h2{
+    font-size: 180%;
+    margin-bottom: 1rem;
+}
+p.results{
+    font-size: 110%;
+    line-height: 1.5em;
+    margin-bottom: 1rem;
+}
 button, a{
     display: block;
     margin: 0.5rem auto;
@@ -23,7 +32,7 @@ button:hover, button:focus{
     background-color: white;
 }
 body{
-    background-color: #F1E4AA;
+    background-color: #c3dda5;
     background-image: url(../images/wallpaper.jpg);
 }
 main{
@@ -34,7 +43,7 @@ main{
 }
 fieldset{
     padding: 1em 2em;
-    background-color: #fffae3;
+    background-color: #e2fdc3;
     background-image: url(../images/form-drop.jpg);
     border: 0;
     margin-bottom: 1rem;
@@ -49,6 +58,13 @@ fieldset{
         font-size: 130%;
         display: inline-block;
         width: 8em;
+    }
+    input#arrival-date, input#nights, input#name, input#email, input#phone{
+        width: 12em;
+        padding-left: 0.25rem;
+    }
+    input#early-check-in{
+        transform: scale(1.2);
     }
 }
 fieldset.type-selector{
@@ -75,5 +91,18 @@ fieldset.type-selector{
 
 span{
     color: red;
+    font-size: 90%;
     font-weight: bold;
 }
+@media only screen and (max-width:975px){
+    span.block-message{
+        display: block;
+        margin-left: 12em;
+    }
+}
+@media only screen and (max-width:622px){
+    span.block-message{
+        margin-left: 0;
+    }
+}
+
