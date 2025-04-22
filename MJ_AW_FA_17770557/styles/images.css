@@ -6,7 +6,11 @@ img#first-home{
 }
 
 /* Housing */
-
+img#housing{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
 /* Job Search */
 
 /* Transportation */

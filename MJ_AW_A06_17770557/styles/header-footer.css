@@ -1,0 +1,43 @@
+header{
+    background-image: linear-gradient(to bottom, #FFF 0%, #fff6d0 90%, #FFF 100%);
+    mix-blend-mode: multiply;
+    h1{
+        font-weight: normal;
+        text-align: center;
+        font-size: 500%;
+        padding-bottom: 0.25rem;
+        text-shadow: 0 0 2px gray;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+    }
+    h4{
+        font-size: 200%;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+        padding-bottom: 2rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    a:hover, a:focus{
+        text-decoration: underline dotted 1px;
+    }
+}
+
+/* Media Queries */
+@media only screen and (max-width:885px){
+    header h1{
+        font-size: 400%;
+    }
+}
+@media only screen and (max-width:500px){
+    header h1{
+        font-size: 300%;
+    }
+}
+@media only screen and (max-width:400px){
+    header h1{
+        font-size: 250%;
+    }
+}

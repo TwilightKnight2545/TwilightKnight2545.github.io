@@ -5,26 +5,40 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Text Elements*/
-h1{
-    font-size: 240%;
+h1, h2, h3, h4{
+    font-family: Italianno, cursive;
+    text-align: center;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 h2{
-    font-size: 180%;
+    font-size: 250%;
+}
+h4{
+    font-weight: normal;
+    text-align: center;
+    font-size: 250%;
+    padding-top: 0.5em;
 }
 select, option{
-    font-size: 120%;
+    font-size: 100%;
+    text-align: center;
 }
 /* HTML */
 html{
     background-color: #f7f2fa;
+    background-image: url(../images/rain-drop-texture.png);
+    mix-blend-mode: multiply;
 }
 /* Body */
 body{
     display: block;
+    mix-blend-mode: normal;
     width: 70%;
-    margin: 0.5rem auto;
-
-    background-color: #ffffff;
+    margin: 0rem auto;
+    min-height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgb(180, 171, 180);
 }
 /* Images */
 div#menu{
@@ -34,25 +48,26 @@ div#menu{
     flex-wrap: wrap;
     justify-content: center;
 }
-a.menu-pictures{
+div.menu-pictures{
     display: block;
-    width: 15rem;
+    /* width: 15rem; */
     height: 10rem;
     min-width: 15rem;
     margin: 0.25rem;
     transition: all 0.25s;
-    
+    cursor: pointer;
     color: #ffffff00;
+    border-radius: 10px;
     /* Background */
     background-color: #FFF;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     /* Elements */
     p{
         display: block;
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
         
         font-size: 150%;
         font-weight: bold;
@@ -61,34 +76,126 @@ a.menu-pictures{
     }
 }
 /* Hover */
-a.menu-pictures:hover, a.menu-pictures:focus{
+
+div.menu-pictures:hover, div.menu-pictures:focus{
     background-color: #7f7f7f;
     p{
         color: #FFF;
     }
-}
-a#biscotti{
-    background-image: url(../images/biscotti.jpg);
-}
-a#cappuccino{
-    background-image: url(../images/cappuccino.jpg);
-}
-a#coffee{
-    background-image: url(../images/coffee.jpg);
-}
-a#espresso{
-    background-image: url(../images/espresso.jpg);
-}
-a#latte{
-    background-image: url(../images/latte.jpg);
-}
-a#scone{
-    background-image: url(../images/scone.jpg);
+    box-shadow: 0 0 8px gray ;
 }
 
 /* Select */
 select{
     display: block;
-    width: 70%;
+    width: 50%;
     margin: 0.25rem auto;
+    padding-left: 0.5rem;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+select::-webkit-scrollbar{
+    display: none;
+}
+/* Price Display */
+h3#subtotal{
+    font-size: 180%;
+    font-style: normal;
+    color: transparent;
+    transition: 1s color;
+}
+h3#subtotal.visible{
+    color: #000;
+}
+h4#total{
+    font-size: 400%;
+    text-shadow: 0 0 3px gray;
+}
+h4#instructions{
+    transition: all 0.5s;
+}
+h4#instructions.error{
+    color: red;
+    transform: scale(1.1);
+}
+/* Buttons */
+div#buttons{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    button{
+        display: block;
+        width: 10em;
+        cursor: pointer;
+        margin: 0.25rem auto;
+        font-style: oblique;
+
+        background-color: #fff6d0;
+        box-shadow: 1px 1px 3px lightgrey;
+        border-radius: 5px;
+        border-color: transparent;
+        transition: all 0.1s;
+    }
+    button:focus, button:hover{
+        font-weight: bold;
+    }
+}
+/* Media Queries */
+@media only screen and (max-width:1520px){
+    div#menu{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:885px){
+    h1{
+        font-size: 400%;
+    }
+    h4{
+        font-size: 220%;
+    }
+    div#menu{
+        width: 90%;
+        div.menu-pictures{
+            width: 11.25rem;
+            min-width: 11.25rem;
+        }
+    }
+}
+@media only screen and (max-width:790px){
+    body{
+        width: 90%;
+    }
+    option{
+        font-size: 90%;
+    }
+    div#menu{
+        div.menu-pictures{
+            min-width: 7.5rem;
+        }
+    }
+
+}
+@media only screen and (max-width:615px){
+    h4{
+        font-size: 180%;
+        padding-bottom: 0.25em;
+    }
+    div#menu{
+        width: 95%;
+        height: 36vh;
+        overflow-y: scroll;
+        div.menu-pictures{
+            width: 9rem;
+            height: 6rem;
+            p{
+                font-size: 130%;
+            }
+        }
+        box-shadow: 0 2px 4px lightgray;
+    }
+}
+@media only screen and (max-width:400px){
+    div#menu{
+        height: 25vh;
+    }
 }

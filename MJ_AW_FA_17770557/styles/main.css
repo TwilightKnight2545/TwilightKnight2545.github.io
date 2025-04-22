@@ -134,6 +134,17 @@ section div.article p{
 section div.article h1{
     margin-top: 1em;
 }
+section div.article ul{
+    margin-left: 2em;
+    li{
+        font-weight: bold;
+        font-style: oblique;
+        font-size: 90%;
+        margin-top: 0.5em;
+        color: #457984;
+    }
+    margin-bottom: 1em;
+}
 
 section div.helpful-hint{
     display: block;
