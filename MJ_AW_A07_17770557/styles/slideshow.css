@@ -1,0 +1,47 @@
+main{
+    display: block;
+    width: 55vw;
+    margin: 1rem auto;
+    overflow: hidden;
+    box-shadow: 0 0 6px white;
+}
+ul#slideshow{
+    display: flex;
+    width: 500%;
+    /* mix-blend-mode: screen; */
+    margin: auto;
+    animation: slideshow 6s alternate infinite;
+    animation-delay: 1s;
+    list-style: none;
+    li img{
+        /* display: block; */
+        width: 100%;
+    }
+}
+h3{
+    font-family: 'Metal Mania';
+    font-size: 170%;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem;
+}
+@keyframes slideshow{
+    0% {transform: translateX(0%);}
+    10% {transform: translateX(0%);}
+    20% {transform: translateX(-20%);}
+    30% {transform: translateX(-20%);}
+    40% {transform: translateX(-40%);}
+    50% {transform: translateX(-40%);}
+    60% {transform: translateX(-60%);}
+    70% {transform: translateX(-60%);}
+    80% {transform: translateX(-80%);}
+    90% {transform: translateX(-80%);}
+    100%{transform: translateX(-80%);}
+}
+@media only screen and (max-width: 800px) {
+    main{width: 75vw;}
+}
+@media only screen and (max-width: 639px) {
+    main{width: 90vw;}
+}

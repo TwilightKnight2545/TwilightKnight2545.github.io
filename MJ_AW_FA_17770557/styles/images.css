@@ -11,10 +11,14 @@ img#housing{
     width: 90%;
     margin: 0 auto;
 }
-/* Job Search */
-
+/* Mental Health */
+img#mental-health{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
 /* Transportation */
-img#transportation{
+img#transportation, img#tools{
     display: block;
     width: 90%;
     margin: 0 auto;
@@ -27,3 +31,8 @@ img#cooking-image{
     filter: contrast(0.8) saturate(0.8);
 }
 /* Budgeting */
+img#coins{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}

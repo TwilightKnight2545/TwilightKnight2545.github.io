@@ -1,0 +1,120 @@
+
+section, aside{
+    display: block;
+    width: 70%;
+    height: 15rem;
+    margin: auto;
+    padding: 2rem;
+    padding-top: 3rem;
+    text-align: center;
+
+    background-color: transparent;
+    background-image: url(../images/paper-scrap.png);
+    background-size: contain;
+    background-position-x: 50%;
+    background-position-y: -40px;
+    background-repeat: no-repeat;
+
+    div{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 0.5rem;
+        font-size: 120%;
+
+        label{
+            display: inline-block;
+            width: 6em;
+        }
+        label.error{
+            color: rgb(216, 3, 3);
+        }
+        input{
+            display: inline-block;
+            width: 12em;
+            box-sizing:content-box;
+        }
+        input.error{
+            border-color: red;
+        }
+        .error{
+            animation: rock 1s;
+        }
+    }
+    button{
+        display: block;
+        width: fit-content;
+        margin: auto;
+
+        font-style: oblique;
+        font-size: 90%;
+
+        background-color: transparent;
+        border: 0;
+        text-shadow: 1px 1px 2px darkgray;
+        
+    }
+    button:focus, button:hover{
+        animation: rock 1s infinite;
+        animation-delay: 0.05s;
+    }
+    textarea{
+        font-family: 'Metal Mania';
+        font-size: 110%;
+        margin-top: -1rem;
+        height: 6rem;
+        width: 18rem;
+        box-sizing: border;
+        padding-left: 0.25rem;
+        resize: none;
+        box-sizing:content-box;
+    }
+    p{
+        font-size: 120%;
+    }
+}
+aside{
+    margin-top: -3rem;
+    padding-bottom: 2rem;
+}
+@media only screen and (max-width: 639px) {
+    section, aside{
+        background-image: none;
+        padding: 0;
+        height: auto;
+        margin-top: 2rem;
+    }
+    section{
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+    aside{
+        textarea{
+            margin-top: 0
+        };
+    }
+    main{
+        background-image: url(../images/paper-scrap-large.png);
+        background-size: 85vw;
+        background-position-x: 50%;
+        background-position-y: -40px;
+        background-repeat: repeat-y;
+
+        overflow-y: visible;
+    }
+}
+@media only screen and (max-width: 600px) {
+    section div{
+        margin-bottom: 0;
+    }
+    aside{
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+@media only screen and (max-width: 460px) {
+    aside{
+        textarea{
+            width: 12em;
+        }
+    }
+}

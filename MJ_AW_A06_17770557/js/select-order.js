@@ -60,7 +60,7 @@ const reset = () =>{
 }
 const placeOrder = (event) =>{
     if(runningTotal != 0){
-        localStorage.setItem("subtotal", runningTotal)
+        sessionStorage.setItem("subtotal", runningTotal);
     }
     else{
         event.preventDefault();

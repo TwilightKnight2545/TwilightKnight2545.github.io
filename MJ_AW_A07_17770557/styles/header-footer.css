@@ -1,0 +1,85 @@
+header{
+    /* width: 100%; */
+    background-image: linear-gradient(to bottom, #00000088 0%, #00000000 50%);
+    text-align: center;
+    nav{
+        display: flex;
+        div{
+            display: block;
+            width: 25%;
+            margin: 0 auto;
+            background-color: transparent;
+            background-image: url(../images/paper-scrap-2.png);
+            background-size: contain;
+            background-position-x: 50%;
+            background-repeat: no-repeat;
+
+            padding: 4rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+            a{
+                display: block;
+                width: fit-content;
+                margin: 0 auto;
+
+                font-size: 170%;
+                color: #222;
+                text-shadow: 0px 0px 2px white;
+            }
+        }
+        div:hover, div:focus{
+            animation: rock 1s infinite;
+            animation-delay: 0.05s;
+        }
+        div.current{
+            background-image: url(../images/paper-scrap.png);
+        }
+    }
+    div.title{
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+        padding: 8em;
+
+        background-color: transparent;
+        background-image: url(../images/paper-scrap.png);
+        background-size: contain;
+        background-position-x: 50%;
+        background-repeat: no-repeat;
+        h1{
+            font-family: 'Metal Mania';
+            font-size: 220%;
+            padding-bottom: 0.25em;
+        }
+        h2{
+            font-size: 180%;
+            color: #444;
+        }
+        h1, h2{
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            text-shadow: 0px 0px 2px white;
+        }
+    }
+}
+@media only screen and (max-width: 785px) {
+    header nav div{
+        padding-top: 3rem;
+    }
+}
+@media only screen and (max-width: 639px) {
+    header nav{
+        background-color: #ededed;
+        div, div.current{
+            background-image: none;
+            padding: 0.5rem;
+            a{font-size: 140%;}
+        }
+        div.current{
+            a{text-decoration: underline dashed;}
+        }
+        margin-bottom: 1rem;
+    }
+}

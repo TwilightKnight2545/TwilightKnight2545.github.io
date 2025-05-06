@@ -1,0 +1,19 @@
+*{
+    font-size: 100%;
+    font-family: 'Fontdiner Swanky', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 0;
+    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: #111112;
+    background-image: url(../images/background-texture.png);
+}
+@keyframes rock{
+    0% {transform: rotate(3deg);}
+    25% {transform: rotate(-3deg);}
+    50% {transform: rotate(3deg);}
+    75% {transform: rotate(-3deg);}
+}

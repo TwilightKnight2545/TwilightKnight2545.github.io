@@ -19,18 +19,16 @@ const displayMessage = () =>{
         "Life can be hard, but the fact that you're still here means you're winning!",
         "You are worth it!",
         "Studies show that people who smile often are also likely grin!", //15
-        "Knock Knock! (p.1)",
-        "Who's There? (p.2)",
-        "House! (p.3)",
-        "House Who? (p.4)",
-        "House About We Have Some Fun Today! (p.5)", //20
+        "Knock Knock! Who's there? House! House who? House about we have some fun today!",
         "Every day is a chance to improve!",
         "You are enough!",
-        "Drink some water...please?"
+        "Drink some water...please?",
+        "Would you like to hear a bread pun? It's the <i>yeast</i> I can do!"//20
         
     ];
     let randomNumber = Math.floor(Math.random() * messageArray.length); //0-9
-    pFooterMessage.innerText = messageArray[randomNumber];
+    // randomNumber = 20; //Manual Overide
+    pFooterMessage.innerHTML = messageArray[randomNumber];
 }
 //Document Element
 const pFooterMessage = document.querySelector("#random_message");
