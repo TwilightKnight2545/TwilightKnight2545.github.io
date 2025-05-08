@@ -57,7 +57,7 @@ div#budgeting-tool{
         }
     }
     fieldset.results{
-        width: 80%;
+        width: 85%;
         p{
             display: inline-block;
             box-sizing: border-box;
@@ -70,6 +70,9 @@ div#budgeting-tool{
         }
         div#top-labels label{
             text-align: center;
+        }
+        div#expenses input{
+            color: red;
         }
     }
     

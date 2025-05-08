@@ -5,6 +5,22 @@ const getElement = (selector) => document.querySelector(selector);
 //Helper Functions
 const formatCurrency = (number) => {return new Intl.NumberFormat("en-US", {style:'currency', currency: "USD"}).format(number)}
 const formatNumber = (currency) => {return parseFloat(currency.replace(/[^\d\.]/g, ""));}
+const getInputKey = (element) =>{return element.previousElementSibling.innerText.toLowerCase().replace(" ", "_").replace(":", "")}
+const loadSessionData = () =>{
+    const fields = [inputHourlyWage, inputHoursPerWeek, inputAnnualSalary, inputRent, inputElectric, inputHeating, inputWater, inputInternet, inputPhone, inputFood, inputGas]
+    fields.forEach(input => {
+        const key = getInputKey(input);
+        input.value = (sessionStorage.getItem(key) == null) ? "" : sessionStorage.getItem(getInputKey(input))
+        console.log(sessionStorage.getItem(getInputKey(input)));
+        if(input != inputHoursPerWeek){
+            if(input.value != "")
+                input.value = formatCurrency(input.value);
+        }
+        
+    });
+    calcTotalIncome();
+    calcTotalExpenses();
+}
 //Functions
 //On mouse Down
 const formatElementNumber = (element) => {
@@ -34,20 +50,23 @@ const formatSavingsOutputs = (element) =>{
         outputSavings.value = formatCurrency(formatNumber(outputNetIncome.value) - formatNumber(element.value))
     }
     //Format % Saved
-    outputSavingPercent.innerText = ((formatNumber(outputSavings.value) / formatNumber(outputNetIncome.value)) * 100) + "%";
+    outputSavingPercent.innerText = ((formatNumber(outputSavings.value) / formatNumber(outputNetIncome.value)) * 100).toFixed(1) + "%";
+    rangePercentSaved.value = formatNumber(outputSavingPercent.innerText);
 } //Called on focusout, formats to currency
 const formatInputs = (element) =>{
-    if(element.value != ''){
+    const elementValue = (isNaN(formatNumber(element.value))) ? "" : formatNumber(element.value);
+    sessionStorage.setItem(getInputKey(element), elementValue);
+    if(elementValue != ''){
         element.setAttribute("class", ""); //Initially valid
-        if(isNaN(element.value.replace("$", "")))
+        if(isNaN(elementValue) && elementValue != "")
             element.setAttribute("class", "invalid-entry");
 
         //Check if it should be a currency or not
         if(element.getAttribute("int") == "true"){
-            element.value = (isNaN(element.value) || parseFloat(element.value) < 0) ? "" : Math.ceil(parseFloat(element.value));
+            element.value = (isNaN(elementValue) || elementValue < 0) ? "" : Math.ceil(elementValue);
         }
         else{
-            element.value = (isNaN(element.value) || parseFloat(element.value) < 0) ? "" : formatCurrency(element.value);
+            element.value = (isNaN(elementValue) || elementValue < 0) ? "" : formatCurrency(elementValue);
         }
     }
         
@@ -73,8 +92,8 @@ const useSalary = () =>{
     divWageTab.setAttribute("style", "display: none;")
 }
 const calcDisposableIncome = () =>{
-    const netIncome = parseFloat(outputNetIncome.value.replace("$", ""));
-    const percentSaved = parseFloat(outputSavingPercent.innerText.replace("%", "")) / 100;
+    const netIncome = parseFloat(formatNumber(outputNetIncome.value));
+    const percentSaved = parseFloat(formatNumber(outputSavingPercent.innerText)) / 100;
     
     outputSavings.value = formatCurrency((netIncome * percentSaved).toFixed(2));
     outputDisposableIncome.value = formatCurrency((netIncome * (1 - percentSaved)).toFixed(2));
@@ -91,13 +110,38 @@ const calcTotalIncome = () =>{
         }
     }
     else{
-        outputMonthlyIncome.value = formatCurrency(formatNumber(inputAnnualSalary.value) / 12);
+        if(inputAnnualSalary.value != "")
+            outputMonthlyIncome.value = formatCurrency(formatNumber(inputAnnualSalary.value) / 12);
+        else
+            outputMonthlyIncome.value = "";
     }
+    if(outputMonthlyIncome.value != ""){
+        outputGrossIncome.value = outputMonthlyIncome.value;
+    }
+    else
+        outputGrossIncome.value = "$0.00"
+    calcNetIncome();
 }
 const calcTotalExpenses = () =>{
-
+    let total = 0.0;
+    const fields = [inputRent, inputElectric, inputHeating, inputWater, inputInternet, inputPhone, inputFood, inputGas]
+    fields.forEach(input => {
+        if(input.value != ""){
+            total += formatNumber(input.value);
+        }
+    });
+    outputTotalExpenses.value = formatCurrency(total);
+    calcNetIncome();
+}
+const calcNetIncome = () =>{
+    outputNetIncome.value = formatCurrency(formatNumber(outputGrossIncome.value) - formatNumber(outputTotalExpenses.value))
+    // formatSavingsOutputs(outputSavings);
+    calcDisposableIncome();
+    calcAnnual();
 }
 const calcAnnual = () =>{
+    outputGrossIncomeAnnual.value = formatCurrency(formatNumber(outputGrossIncome.value) * 12);
+    outputTotalExpensesAnnual.value = formatCurrency(formatNumber(outputTotalExpenses.value) * 12);
     outputNetIncomeAnnual.value = formatCurrency(formatNumber(outputNetIncome.value) * 12);
     outputSavingsAnnual.value = formatCurrency(formatNumber(outputSavings.value) * 12);
     outputDisposableIncomeAnnual.value = formatCurrency(formatNumber(outputDisposableIncome.value) * 12);
@@ -129,6 +173,12 @@ const rangePercentSaved = getElement("#range-saving");
 //--Outputs
 const outputMonthlyIncome = getElement("#monthly-income");
 const outputAnnualIncome = getElement("#annual-income");
+
+const outputGrossIncome = getElement("#gross-income");
+const outputGrossIncomeAnnual = getElement("#annual-gross-income");
+
+const outputTotalExpenses = getElement("#total-expenses");
+const outputTotalExpensesAnnual = getElement("#annual-total-expenses");
 
 const outputNetIncome = getElement("#net-income");
 const outputNetIncomeAnnual = getElement("#annual-net-income");
@@ -191,4 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
     outputSavings.addEventListener("focusout", function(){formatSavingsOutputs(outputSavings); calcAnnual();})
     outputDisposableIncome.addEventListener("mousedown", function(){formatElementNumber(outputDisposableIncome);})
     outputDisposableIncome.addEventListener("focusout", function(){formatSavingsOutputs(outputDisposableIncome); calcAnnual();})
+
+    loadSessionData();
 })

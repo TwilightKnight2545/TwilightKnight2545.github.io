@@ -51,7 +51,7 @@
                 <img src="images/coins.png" alt="Coins" id="coins">
                 <figcaption>Photo by Josh Appel on <a href="https://unsplash.com" target="_blank" class="in-text-link">Unsplash</a></figcaption>
                 <div class="article">
-                    <h2>Under Construction</h2>
+                    <h2>Penny Pinching</h2>
                     <p>This page has not yet been made. Please check back in 4-6 buisness weeks, and also have some patience, I'm trying okay? *breaks down sobbing...*</p>
                 </div>
                 <div id="budgeting-tool">
@@ -59,17 +59,17 @@
                         <legend>Income</legend>
                         <div id="wages-tab">
                             <div>
-                                <label for="hourly-wage">Hourly Wage: </label>
+                                <label for="hourly-wage">Hourly Wage:</label>
                                 <input type="text" id="hourly-wage">
                             </div>
                             <div>
-                                <label for="hours-per-week">Hours/Week: </label>
+                                <label for="hours-per-week">Hours/Week:</label>
                                 <input type="text" id="hours-per-week" int="true">
                             </div>
                         </div>
                         <div id="salary-tab" style="display: none;">
                             <div>
-                                <label for="annual-salary">Annual Salary: </label>
+                                <label for="annual-salary">Annual Salary:</label>
                                 <input type="text" id="annual-salary">
                             </div>
                         </div>
@@ -136,8 +136,18 @@
                             <label>Annual</label> 
                         </div>
                         <div>
-                            <label for="net-income">Net Income</label>
-                            <input type="text" id="net-income" readonly value="$10.00">
+                            <label for="gross-income">Gross Income:</label>
+                            <input type="text" id="gross-income" readonly value="$0.00">
+                            <input type="text" id="annual-gross-income" readonly value="$0.00">
+                        </div>
+                        <div id="expenses">
+                            <label for="total-expenses">Total Expenses:</label>
+                            <input type="text" id="total-expenses" readonly value="$0.00">
+                            <input type="text" id="annual-total-expenses" readonly value="$0.00">
+                        </div>
+                        <div>
+                            <label for="net-income">Net Income:</label>
+                            <input type="text" id="net-income" readonly value="$0.00">
                             <input type="text" id="annual-net-income" readonly value="$0.00">
                         </div>
                         <br>
@@ -151,12 +161,12 @@
                         </div>
                         <br>
                         <div>
-                            <label for="savings">Savings</label>
+                            <label for="savings">Savings:</label>
                             <input type="text" id="savings" value="$0.00">
                             <input type="text" id="annual-savings" readonly value="$0.00">
                         </div>
                         <div>
-                            <label for="disposable-income">Spending Cash</label>
+                            <label for="disposable-income">Spending Cash:</label>
                             <input type="text" id="disposable-income" value="$0.00">
                             <input type="text" id="annual-disposable-income" readonly value="$0.00">
                         </div>
