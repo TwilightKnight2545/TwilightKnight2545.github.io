@@ -38,13 +38,13 @@
         <main>
             <aside>
                 <div class="sticky">
-                    <!-- <h3 style="cursor: help;" title="TLDR;">Key Information</h3>
+                    <h3 style="cursor: help;" title="TLDR;">Key Information</h3>
                     <ul>
                         <li><p>Test 1</p></li>
                         <li><p>Test 2</p></li>
                         <li><p>Test 3</p></li>
                         <li><p>Test 4</p></li>
-                    </ul> -->
+                    </ul>
                 </div>
             </aside>
             <section>
@@ -64,7 +64,7 @@
                             </div>
                             <div>
                                 <label for="hours-per-week">Hours/Week: </label>
-                                <input type="text" id="hours-per-week">
+                                <input type="text" id="hours-per-week" int="true">
                             </div>
                         </div>
                         <div id="salary-tab" style="display: none;">
@@ -130,27 +130,35 @@
                         </div>
                     </fieldset>
                     <fieldset class="results">
+                        <div id="top-labels">
+                            <label></label> 
+                            <label>Monthly</label> 
+                            <label>Annual</label> 
+                        </div>
                         <div>
                             <label for="net-income">Net Income</label>
-                            <input type="text" id="net-income" readonly value="$0.00">
+                            <input type="text" id="net-income" readonly value="$10.00">
+                            <input type="text" id="annual-net-income" readonly value="$0.00">
                         </div>
-
+                        <br>
                         <div>
                             <label for="range-saving" title="Percentage of remaining income to put into savings">% Saved</label>
                             <input type="range" id="range-saving" value="60" min="0" max="100" oninput="document.querySelector('#percent-saved').innerText = this.value + '%'">
                         </div>
                         <div>
-                            <label></label>    
+                            <label></label>  
                             <p id="percent-saved">60%</p>
                         </div>
-
+                        <br>
                         <div>
                             <label for="savings">Savings</label>
-                            <input type="text" id="savings">
+                            <input type="text" id="savings" value="$0.00">
+                            <input type="text" id="annual-savings" readonly value="$0.00">
                         </div>
                         <div>
                             <label for="disposable-income">Spending Cash</label>
-                            <input type="text" id="disposable-income">
+                            <input type="text" id="disposable-income" value="$0.00">
+                            <input type="text" id="annual-disposable-income" readonly value="$0.00">
                         </div>
                     </fieldset>
                 </div>

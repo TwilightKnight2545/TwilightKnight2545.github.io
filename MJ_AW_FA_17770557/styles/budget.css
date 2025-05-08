@@ -68,6 +68,9 @@ div#budgeting-tool{
         input[type=range]{
             padding-right: 0;
         }
+        div#top-labels label{
+            text-align: center;
+        }
     }
     
 }
