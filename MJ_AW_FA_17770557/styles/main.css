@@ -1,6 +1,18 @@
 /* 
 Main.css will handle site-wide formatting including fonts, background colors, standard widths, and setting up the grid(maybe)
 */
+/* Variables */
+:root{
+    --primary-color: #457984;
+    --secondary-color: #7BCBDF;
+    --bonus-sections: #64848B;
+    --highlight-mint: #CFFFCF;
+    --highlight-lemon-lime: #EDFF90;
+    --highlight-orange: #FFC776;
+    --links: #048B79;
+    --light-gray: #EDF2F4;
+    --shadows: #444546;
+}
 
 /* Universal Resets */
 *{
@@ -77,7 +89,7 @@ figcaption{
 }
 a.in-text-link{
     font-weight: bold;
-    color: #048b79;
+    color: var(--links);
     transition: color 0.1s;
 }
 a.in-text-link:hover, a.in-text-link:focus{
@@ -98,9 +110,9 @@ body{
     display: flex;
     width: 100%;
     flex-direction: column;
-    box-shadow: 0 2px 4px #444546;
+    box-shadow: 0 2px 4px var(--shadows);
     min-height: 100vh;
-    background: #457984;
+    background: var(--primary-color);
 }
 /* Main */
 main{
@@ -113,8 +125,8 @@ main{
 section{
     grid-row: 1;
     grid-column: 1;
-    border-right: 3px solid #EDF2F4;
-    box-shadow: 2px 1px 4px #444546;
+    border-right: 3px solid var(--light-gray);
+    box-shadow: 2px 1px 4px var(--shadows);
     padding-top: 2em;
     padding-bottom: 0.5em;
     /* padding: 2rem 2rem 0.5rem 5rem; */
@@ -141,29 +153,29 @@ section div.article ul{
         font-style: oblique;
         font-size: 90%;
         margin-top: 0.5em;
-        color: #457984;
+        color: var(--primary-color);
     }
     margin-bottom: 1em;
 }
 
 section div.helpful-hint{
     display: block;
-    background-color: #64848b;
-    border: 4px solid #457984;
+    background-color: var(--bonus-sections);
+    border: 4px solid var(--primary-color);
     border-radius: 15px;
     padding: 0.25rem 2rem;
     width: 80%;
     margin: auto;
     margin-bottom: 2rem;
     h4{
-        color: #EDFF90;
+        color: var(--highlight-lemon-lime);
         font-weight: bold;
     }
     p{
         margin-top: 0.75em;
         margin-bottom: 0.75em;
         margin-left: 3rem;
-        color: #EDF2F4;
+        color: var(--light-gray);
         font-weight: bold;
         font-size: 80%;
     }
@@ -173,7 +185,7 @@ aside{
     grid-row: 1;
     grid-column: 2;
     
-    background-color: #EDF2F4;
+    background-color: var(--light-gray);
     padding: 2em 1em 1em 1em;
 }
 
@@ -232,7 +244,7 @@ aside ul li p{
         flex-direction: column-reverse;
         aside{
             display: block;
-            box-shadow: 2px 1px 8px #444546;
+            box-shadow: 2px 1px 8px var(--shadows);
             ul li{
                 margin-bottom: 1.5em;
             }

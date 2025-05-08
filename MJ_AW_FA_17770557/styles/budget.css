@@ -1,0 +1,104 @@
+section{padding-bottom: 0;}
+
+div#budgeting-tool{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    /* Fonts */
+    label, legend{
+        font-family: 'Century Gothic', sans-serif;
+        font-weight: bold;
+        color: #091418;
+    }
+    button{
+        padding: 0.25em 0.5em;
+        border: 0;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+    fieldset{
+        display: block;
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+        width: 40%;
+        background-color: var(--light-gray);
+
+        border-radius: 5px;
+        legend{
+            width: 8em;
+            font-size: 150%;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--highlight-mint);
+            border-radius: 5px;
+        }
+        label{
+            display: inline-block;
+            width: 9em;
+
+            text-align: left;
+        }
+        input{
+            display: inline-block;
+            width: 8em;
+            text-align: right;
+            padding-right: 0.5em;
+        }
+        label, input{
+            font-size: 110%;
+            transition: border .25s;
+        }
+        div{
+            margin-bottom: 0.25em;
+        }
+    }
+    fieldset.results{
+        width: 80%;
+        p{
+            display: inline-block;
+            box-sizing: border-box;
+            width: 8em;
+            padding-right: 0.5em;
+            font-size: 90%;
+        }
+        input[type=range]{
+            padding-right: 0;
+        }
+    }
+    
+}
+
+div#buttons{
+    display: block;
+    margin-top: 2em;
+    button{
+        cursor: pointer;
+        font-style: oblique;
+        color: var(--primary-color);
+        transition: 0.25s text-shadow, color;
+    }
+    button.selected{
+        color: #000;
+        text-decoration: underline;
+    }
+    button:focus, button:hover{
+        text-shadow: 1px 1px 1px var(--shadows);
+    }
+}
+.invalid-entry{
+    animation: error 0.5s;
+    border-color: red;
+}
+/* Animations */
+@keyframes error {
+    0%   {transform: translateX(0em);}
+    20%  {transform: translateX(1em);}
+    40%  {transform: translateX(-1em);}
+    60%  {transform: translateX(.5em);}
+    80%  {transform: translateX(-.5em);}
+    100% {transform: translateX(0em);}
+}

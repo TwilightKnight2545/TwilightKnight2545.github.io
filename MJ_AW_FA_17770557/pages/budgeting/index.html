@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="styles/slicknav.css">
     <link rel="stylesheet" href="styles/images.css">
+    <link rel="stylesheet" href="styles/budget.css">
     <link rel="shortcut icon" href="images/Moving-Out-Icon.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -53,7 +54,108 @@
                     <h2>Under Construction</h2>
                     <p>This page has not yet been made. Please check back in 4-6 buisness weeks, and also have some patience, I'm trying okay? *breaks down sobbing...*</p>
                 </div>
+                <div id="budgeting-tool">
+                    <fieldset>
+                        <legend>Income</legend>
+                        <div id="wages-tab">
+                            <div>
+                                <label for="hourly-wage">Hourly Wage: </label>
+                                <input type="text" id="hourly-wage">
+                            </div>
+                            <div>
+                                <label for="hours-per-week">Hours/Week: </label>
+                                <input type="text" id="hours-per-week">
+                            </div>
+                        </div>
+                        <div id="salary-tab" style="display: none;">
+                            <div>
+                                <label for="annual-salary">Annual Salary: </label>
+                                <input type="text" id="annual-salary">
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="monthly-income">Monthly Income: </label>
+                            <input type="text" id="monthly-income" readonly>
+                        </div>
+                        <div>
+                            <label for="annual-income" id="annual-income-label">Annual Income: </label>
+                            <input type="text" id="annual-income" readonly>
+                        </div>
+
+                        <div id="buttons">
+                            <button id="wages" class="selected" >Hourly Wages</button>
+                            <button id="salary">Salary</button>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Housing</legend>
+                        <div>
+                            <label for="monthly-payments">Rent/Mortgage: </label>
+                            <input type="text" id="monthly-payments">
+                        </div>
+                        <div>
+                            <label for="electric">Electric Bill: </label>
+                            <input type="text" id="electric" title="">
+                        </div>
+                        <div>
+                            <label for="heating">Heating Bill: </label>
+                            <input type="text" id="heating" title="If your building uses electric heating, this will likely be included in your electric bill.">
+                        </div>
+                        <div>
+                            <label for="water">Water Bill: </label>
+                            <input type="text" id="water" title="">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Utilities</legend>
+                        <div>
+                            <label for="internet">Internet Plan: </label>
+                            <input type="text" id="internet" title="">
+                        </div>
+                        <div>
+                            <label for="phone">Phone Plan: </label>
+                            <input type="text" id="phone" title="">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Misc. Expenses</legend>
+                        <div>
+                            <label for="food">Food/Groceries: </label>
+                            <input type="text" id="food">
+                        </div>
+                        <div>
+                            <label for="gas">Gasoline: </label>
+                            <input type="text" id="gas">
+                        </div>
+                    </fieldset>
+                    <fieldset class="results">
+                        <div>
+                            <label for="net-income">Net Income</label>
+                            <input type="text" id="net-income" readonly value="$0.00">
+                        </div>
+
+                        <div>
+                            <label for="range-saving" title="Percentage of remaining income to put into savings">% Saved</label>
+                            <input type="range" id="range-saving" value="60" min="0" max="100" oninput="document.querySelector('#percent-saved').innerText = this.value + '%'">
+                        </div>
+                        <div>
+                            <label></label>    
+                            <p id="percent-saved">60%</p>
+                        </div>
+
+                        <div>
+                            <label for="savings">Savings</label>
+                            <input type="text" id="savings">
+                        </div>
+                        <div>
+                            <label for="disposable-income">Spending Cash</label>
+                            <input type="text" id="disposable-income">
+                        </div>
+                    </fieldset>
+                </div>
             </section>
+            <script src="js/budget.js"></script>
         </main>
         <footer>
             <p class="copyright">&copy; &nbsp;MJ 2025</p>

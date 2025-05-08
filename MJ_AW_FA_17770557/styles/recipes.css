@@ -9,8 +9,8 @@ img.food-pics{
 div#fast-food-price-calc{
     display: block;
     width: 100%;
-    background-color: #64848b;
-    border-right: 5px solid #64848b;
+    background-color: var(--bonus-sections);
+    border-right: 5px solid var(--bonus-sections);
     margin-bottom: 1rem;
     
     padding-top: 0.5rem;
@@ -22,23 +22,23 @@ div#fast-food-price-calc{
         margin-bottom: 0.5em;
     }
     p, label, h4{
-        color: #EDF2F4;
+        color: var(--light-gray);
         margin: 0.5rem 3rem;
     }
     h4{
         font-weight: bold;
         /* font-style: oblique; */
-        color: #EDFF90;
+        color: var(--highlight-lemon-lime);
         padding-bottom: 0.25rem;
         margin-bottom: 0.25rem;
-        border-bottom: 1px solid #EDF2F4;
+        border-bottom: 1px solid var(--light-gray);
     }
     
     div#cost-controls{
         display: flex;
         flex-direction: row;
         padding-top: 1rem;
-        border-top: 1px solid #EDF2F4;
+        border-top: 1px solid var(--light-gray);
 
         margin: 0 3rem;
         *{
@@ -60,7 +60,7 @@ div#fast-food-price-calc{
                 margin-bottom: 0.5rem;
                 width: 4rem;
         
-                background-color: #EDF2F4;
+                background-color: var(--light-gray);
                 border: 0;
                 border-radius: 5px;
                 
@@ -81,7 +81,7 @@ div#fast-food-price-calc{
     }
     p#error-message{
         display: block;
-        color: #EDFF90;
+        color: var(--highlight-lemon-lime);
         font-style: oblique;
         font-size: 80%;
         margin: 0;
@@ -95,12 +95,12 @@ div#fast-food-price-calc{
 select#filter-options, select#sort-options, button#reset, input#search{
     appearance: none;
 
-    border: 1px solid #EDF2F4;
+    border: 1px solid var(--light-gray);
     border-radius: 5px;
-    background-color: #EDF2F4;
+    background-color: var(--light-gray);
 
     text-align: center;
-    /* color: #EDF2F4; */
+    /* color: var(--light-gray); */
     /* font-weight: bold; */
     font-style: oblique;
     
@@ -126,7 +126,7 @@ select#filter-options:hover, select#filter-options:focus, button#reset:hover, bu
 option{
     width: 50em;
     font-size: 80%;
-    background-color: #EDF2F4;
+    background-color: var(--light-gray);
     text-align: center;
     color: #4e4e4e;
 }
@@ -155,7 +155,7 @@ div#buttons{
 }
 div#filters{
     grid-column: 2;
-    border: 1px solid #EDF2F4;
+    border: 1px solid var(--light-gray);
     border-radius: 5px;
     padding: 0.25em;
 }
@@ -166,7 +166,7 @@ button.filter-button, button#sort-button{
     margin-bottom: 0.25rem;
     /* width: 5vw; */
     /* Color */
-    background-color: #FFC776;
+    background-color: var(--highlight-orange);
     border-radius: 5px;
     border: 0px;
     /* Text */
@@ -192,7 +192,7 @@ button.filter-button i{
 }
 button#sort-button{
     /* Color */
-    background-color: #CFFFCF;
+    background-color: var(--highlight-mint);
     font-weight: bold;
     /* font-size: 70%; */
 
@@ -207,7 +207,7 @@ div.recipe{
     padding: 1rem;
     /* Color */
     background-color: #FFF;
-    box-shadow: 1px 1px 4px #444546;
+    box-shadow: 1px 1px 4px var(--shadows);
     transition: transform, grid-template, 0.25s;
     p{
         transition: all, 0.25s;
@@ -218,7 +218,7 @@ div.recipe{
         font-size: 140%;
         display: block;
         width: 90%;
-        border-bottom: 2px solid #EDF2F4;
+        border-bottom: 2px solid var(--light-gray);
         margin-bottom: 0.25em;
     }
     ul li{
@@ -244,8 +244,8 @@ div.recipe img{
     grid-column: 1;
     display: block;
     width: 100%;
-    /* border: 2px solid #EDF2F4; */
-    box-shadow: 1px 1px 3px #444546;
+    /* border: 2px solid var(--light-gray); */
+    box-shadow: 1px 1px 3px var(--shadows);
     filter: saturate(1.05);
 }
 div.recipe div.recipe-details{
@@ -261,7 +261,7 @@ div.recipe div.recipe-details ul li{
     margin-right: 0.5em;
     margin-bottom: 0.5em;
     /* Color */
-    background-color: #FFC776;
+    background-color: var(--highlight-orange);
     border-radius: 5px;
     border: 0px;
     /* Text */
@@ -269,7 +269,7 @@ div.recipe div.recipe-details ul li{
     
 }
 div.recipe div.recipe-details ul li.recipe-info{
-    background-color: #7BCBDF;
+    background-color: var(--secondary-color);
 }
 div.recipe div.recipe-details p{
     margin-top: 1em;
