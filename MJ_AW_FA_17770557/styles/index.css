@@ -67,6 +67,7 @@ a#mental-health{
 a#transportation{
     background-image: url(../images/home/transportation-link.png);
     background-position-x: center;
+    background-position-y: bottom;
     background-size: 180%;
 }
 a#food{
