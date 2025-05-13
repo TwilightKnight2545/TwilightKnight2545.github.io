@@ -1,0 +1,12 @@
+@media print{
+    :root{--highlight-orange: #aa6000;}
+    header h1{text-shadow: none; color: #000; font-size: 400%; text-align: center;}
+    main{display: flex; flex-direction: column;}
+    main section, main aside{box-shadow: none;}
+    main aside{h3{font-size: 110%;} ul li { margin: 0.5rem; p{font-size: 85%;}}}
+    nav{display: none;}
+    footer{div.socials, p#random_message{display: none;}}
+    img#first-home, img#mental-health, img#transportation, img#tools, img#cooking-image, img#housing, img#coins, figcaption {display: none;}
+}
+
+

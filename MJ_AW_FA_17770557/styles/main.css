@@ -44,9 +44,6 @@ nav.sticky{
         top: 5em;
     }
 }
-@media only screen and(::-webkit-scrollbar: 50%){
-
-}
 /* Fonts */
 h1, h2, h3, h4{
     font-family: 'Century Gothic', sans-serif;
